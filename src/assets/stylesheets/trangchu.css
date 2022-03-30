@@ -1,0 +1,67 @@
+
+.slider-vnvc {
+    width: 100%;
+}
+
+.logo-vnvc {
+    height: 60px;
+    position: relative;
+    padding-left: 60px;
+    padding-top: 5px;
+
+}
+
+.logo-eplus {
+    height: 26px;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 6px;
+}
+
+.header_desktop_vnvc {
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+.header_desktop_vnvc__navbar-list {
+    list-style: none;   
+    display: flex;
+    padding-left: 200px;
+}
+
+.header_desktop_vnvc__navbar-item {
+    margin: 0 12px;
+    color: var(--black-color);
+    line-height: 70px;
+}
+
+.header_desktop_vnvc__navbar-item_icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);  
+    padding-right: 4px;
+}
+
+.header_desktop_vnvc__navbar-item a {
+    text-decoration: none;
+    color:  var(--primary-color);
+    font-weight: 650;
+    font-size: 1.4rem;
+}
+
+.header_desktop_vnvc__navbar-hotline a{
+    color: #FF7400 !important;
+    font-size: 1.6rem;
+}
+
+
+.slider-1-vnvc {
+    width: 100%;
+}
+
+.slider-2-vnvc {
+    width: 100%;
+    padding-top: 8px;
+}

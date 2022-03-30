@@ -1,0 +1,237 @@
+.container_nhapthongtinvx{
+    padding: 0 50px;
+}
+
+.nhapthongtinvx_heading-title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-align: center;
+    padding-top: 20px;
+}
+
+.nhapthongtinvx_personalinfo-title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding-top: 20px;
+}
+
+.nhapthongtinvx_customertype{
+    color:black;
+    font-size: 1.2rem;
+}
+
+.nhapthongtinvx_personalinfo-description{
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+.nhapthongtinvx_input-title{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.nhapthongtinvx_mota-title{
+    padding-bottom: 5px;
+}
+
+.nhapthongtinvx_kiemtra-note{
+    font-size: 1rem;
+    padding-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.nhapthongtinvx-chosen-item{
+    display: block;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin-top: 40px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    min-height: 260px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.nhapthongtinvx-chosen-item__title{
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid #dad5d5;
+    padding: 20px 0;
+}
+
+.nhapthongtinvx-chosen-item__info{
+    padding: 0 0 30px 0;
+}
+
+.nhapthongtinvx-chosen-item__icon{
+    width: 30px;
+    font-size: 2rem;
+}
+
+.nhapthongtinvx-chosen-item__name{
+    font-size: 1.2rem;
+    color: #595959;
+
+    line-height: 2rem;
+    margin: 10px 0 0 0;
+    padding: 5px 20px;
+    display: block;
+    /* overflow: hidden; */
+}
+
+.nhapthongtinvx-chosen-item__price{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+}
+
+.nhapthongtinvx_chosen_item_total{
+    display: flex;
+}
+
+.nhapthongtinvx-chosen-item__tongtien_title{
+    font-size: 2rem;
+    line-height: 2rem;
+    padding: 6px 20px;
+    
+}
+
+.nhapthongtinvx-chosen-item__tongtien_total{
+    font-size: 2rem;
+    color: red;
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-left: 60px;
+}
+
+.nhapthongtinvx_chosen-item__xemdktt {
+    /* border-top: 1px solid #dad5d5; */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    display: flex;
+    margin: auto;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.nhapthongtinvx_btn_kiemtra{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    width: 70%;
+    border-radius: 8px;
+}
+
+.nhapthongtinvx-package-item{
+    display: block;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.1s;
+    will-change: tranform;
+    width: 240px;
+    height: 260px;
+}
+
+.nhapthongtinvx-package-item__wrap{
+    background-color: rgb(204, 229, 240);
+    border-radius: 4px;
+}
+
+.nhapthongtinvx-package-item__name{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #032346;
+    line-height: 2rem;
+    margin: 10px 0 0 0;
+    padding: 10px 6px 0 6px;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+
+.nhapthongtinvx-package-item__price{
+    display: flex;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    justify-content: center;
+    padding: 10px 6px 10px 6px;
+}
+
+.nhapthongtinvx-package-item__icon{
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.nhapthongtinvx-package-item__description1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #262626!important;
+    padding: 20px 10px 0 10px;
+    display: flex;
+}
+
+.nhapthongtinvx-package-item__description2{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #595959!important;
+    display: flex;
+    justify-content: center; 
+    padding: 10px 10px 0 10px;
+    height: 140px;
+}
+
+.nhapthongtinvx_btn_nhaplaithongtin_nltt{
+    padding-left: 60px;
+    padding-bottom: 20px;
+}
+
+.nhapthongtinvx_btn_nhaplaithongtin{
+    color: var(--white-color);
+    background-color: #35944a;
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.nhapthongtinvx_btn_tieptuc_tt{
+    padding-bottom: 20px;
+}
+
+.nhapthongtinvx_btn_tieptuc{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    width: 80%;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.nhapthongtinvx_btn_khtt_tieptuc{
+    color: #606266;
+    background-color: var(--white-color);
+    width: 70%;
+    border-radius: 8px;
+}

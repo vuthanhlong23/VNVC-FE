@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+ 
+    <link rel="stylesheet" href="../css/datmuavx1.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/nhapthongtinvx.css">
+
+</head>
+
+
+<body>
+    
+    <div class="app">
+        <header>
+            <div class="grid">
+                <div class="header_datmuavx1_vnvc">
+                    <div class="header_datmuavx1_vnvc-logo">
+                        <img class="logo-vnvc-datmuavx1" src="./../res/datmuavx1.png" alt=""> 
+                    </div>
+
+                        <nav class="header_datmuavx1_vnvc__navbar">
+                            <ul class="header_datmuavx1_vnvc__navbar-list">
+                                <li class="header_datmuavx1_vnvc__navbar-first-item">
+                                    <div class="header_datmuavx1_vnvc__worktimedescription">
+                                        <i class="header_datmuavx1_vnvc__navbar-item_icon fas fa-calendar-alt"></i>
+                                        <div>
+                                            <span class="row" >Giờ làm việc: Từ thứ 2 đến chủ nhật</span>
+                                            <span class="row">Từ 7h30 - 17h00 (Không nghỉ trưa)</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="header_datmuavx1_vnvc__navbar-item header_datmuavx1_vnvc__navbar-item-right">
+                                    <a href="#"><i class="header_datmuavx1_vnvc__navbar-item_icon fas fa-home"></i>
+                                    TRANG CHỦ VNVC
+                                    </a>
+                                </li>
+                                <li class="header_datmuavx1_vnvc__navbar-item">
+                                    <a href="#"><i class="header_datmuavx1_vnvc__navbar-item_icon fas fa-shield-virus"></i>DANH MỤC VẮC XIN</a>
+                                </li>
+                                <li class="header_datmuavx1_vnvc__navbar-item">
+                                    <a href="#"><i class="header_datmuavx1_vnvc__navbar-item_icon fas fa-search"></i>TRA CỨU</a>
+                                </li>
+                                <li class="header_datmuavx1_vnvc__navbar-item">
+                                    <a href="#"><i class="header_datmuavx1_vnvc__navbar-item_icon fas fa-book-medical"></i>FAQ</a>
+                                </li>
+                            </ul>   
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container_nhapthongtinvx">
+            <div class="grid">
+                <div class="row">
+                    <span class="nhapthongtinvx_heading-title">
+                       ĐĂNG KÝ MŨI TIÊM 
+                    </span>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <a href="#" class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault1">
+                                    Quý khách là thành viên khách hàng thân thiết
+                                </label>
+                            </a>
+                            <a href="#" class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault2">
+                                    Quý khách chưa là thành viên khách hàng thân thiết
+                                </label>
+                            </a>
+                        </div>
+
+                        <div class="row">
+                            <span class="nhapthongtinvx_personalinfo-title">ĐĂNG NHẬP THÀNH VIÊN KHÁCH HÀNG THÂN THIẾT</span>
+                            <span class="nhapthongtinvx_mota-title">Nhập mã thẻ thành viên của quý khách</span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="input-group mb-3">
+                                    <input type="text" placeholder="Nhập mã thẻ thành viên của quý khách" class="form-control"></input>  
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="btn btn-outline-primary nhapthongtinvx_btn_khtt_tieptuc">TIẾP TỤC</button>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <span class="nhapthongtinvx_personalinfo-title">CHỌN VẮC XIN CHO NGƯỜI TIÊM</span>
+                            <span class="nhapthongtinvx_mota-title">Quý khách có thể đăng ký thêm các loại vắc xin khác và sử dụng cho nhiều lần tiêm khác nhau.</span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-8">
+                                <select class="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
+                                    <option value="1">VẮC XIN GCFLU QUADTIVALENT</option>
+                                    <option value="2">VẮC XIN CHO PHỤ NỮ TRƯỚC MANG THAI</option>
+                                    <option value="3">VẮC XIN PHÒNG VIÊM GAN A - AVAXIM 80U</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <button type="button" class="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <span class="nhapthongtinvx_personalinfo-title">DANH SÁCH VẮC XIN ĐĂNG KÝ</span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4 align-items-center">
+                                <div class="nhapthongtinvx-package-item">
+                                    <div class="nhapthongtinvx-package-item__wrap">
+                                        <h4 class="nhapthongtinvx-package-item__name">GÓI VẮC XIN INFRANRIX (0-9 THÁNG) </h4>
+                                        <span class="nhapthongtinvx-package-item__price"><i class="nhapthongtinvx-package-item__icon fa fa-tag"></i>14.190.000 VNĐ</span>
+                                    </div>
+                                    <span class="nhapthongtinvx-package-item__description1">Phòng bệnh:</span>
+                                    <span class="nhapthongtinvx-package-item__description2">Tiêu chảy cấp do Rotavirus, Bạch Hầu, Ho gà, Uốn ván. Bại liệt, Viêm phổi do vi khuẩn não mô cầu tuýp A, C, Y bla bla bla bla bl bla bla bla </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-4 nhapthongtinvx_btn_nhaplaithongtin_nltt">
+                                <button type="button" class="btn btn-outline-primary nhapthongtinvx_btn_nhaplaithongtin">NHẬP LẠI THÔNG TIN</button>
+                            </div>
+                            <div class="col-4 nhapthongtinvx_btn_tieptuc_tt">
+                                <button type="button" class="btn btn-outline-primary nhapthongtinvx_btn_tieptuc">TIẾP TỤC</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="nhapthongtinvx-chosen-item">
+                            <h4 class="nhapthongtinvx-chosen-item__title"><i class="nhapthongtinvx-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
+                            <div class="nhapthongtinvx-chosen-item__info">
+                                <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                <span class="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
+                                <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                <span class="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
+                                <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                <span class="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
+                            </div>
+                            <div class="nhapthongtinvx_chosen_item_total">   
+                                <span class="nhapthongtinvx-chosen-item__tongtien_title">TỔNG TIỀN</span>
+                                <span class="nhapthongtinvx-chosen-item__tongtien_total">14.604.000 VNĐ</span>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary nhapthongtinvx_chosen-item__xemdktt">XEM ĐIỀU KHOẢN VÀ THANH TOÁN</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div> 
+
+    </div>
+</body>
+</html>

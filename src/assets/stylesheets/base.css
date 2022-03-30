@@ -1,0 +1,43 @@
+/* Đặt biến */
+:root{
+    --primary-color: #2A388F;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #606060;
+}
+
+/* Áp dụng thuộc tính css lên tất cả các phần tử html được nhúng file base.css này */
+*{
+    /* Có thêm padding hay border thì cái kích thước nó vẫn k đổi */
+    box-sizing: inherit;
+}
+
+html {
+    /* Hai dòng dưới lấy size là 12 (HACK) */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    /* San-serif: chủng chữ k có chân */
+    font-family: 'Roboto', sans-serif;
+    /* Thẻ to nhất nên các thẻ sau sẽ kế thừa    */
+    box-sizing: border-box;
+}
+
+
+
+/* Button style */
+.btnq{
+    min-width: 124px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text-color);
+    line-height: 1.6rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+

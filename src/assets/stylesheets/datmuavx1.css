@@ -1,0 +1,297 @@
+.container_datmuavx1 {
+    width: 100% !important;
+    padding: 0 20px;
+}
+
+.header_datmuavx1_vnvc {
+    display: flex;
+    justify-content: flex-start;
+    height: 90px;
+    border-bottom: 1px solid var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.header_datmuavx1_vnvc-logo {
+    height: 90px;
+    padding-right: 20px;
+    border-right: 1px solid var(--white-color);
+}
+
+
+.logo-vnvc-datmuavx1 {
+    height: 70px;
+    position: relative;
+    padding-left: 50px;
+    padding-top: 28px;
+}
+
+
+.header_datmuavx1_vnvc__navbar-list {
+    list-style: none;   
+    display: flex;
+    padding-left: 0;
+    height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-first-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.header_datmuavx1_vnvc__worktimedescription {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_datmuavx1_vnvc__worktimedescription .header_datmuavx1_vnvc__navbar-item_icon {
+    padding-top: 30px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription div {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription span {
+    font-size: 1.4rem;
+}
+
+.header_datmuavx1_vnvc__navbar-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    line-height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-item-right {
+    padding-left: 160px;
+}
+
+.header_datmuavx1_vnvc__navbar-item_icon {
+    font-size: 2.4rem;
+    color: rgb(129, 187, 250);  
+    padding-right: 6px;
+}
+
+.header_datmuavx1_vnvc__navbar-item a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 650;
+    font-size: 1.6rem;
+}
+
+.vacxin-package-item {
+    display: block;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin-top: 40px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.1s;
+    will-change: tranform;
+    width: 240px;
+    height: 340px;
+}
+
+.vacxin-package-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+
+.vacxin-package-item__wrap {
+    background-color: rgb(204, 229, 240);
+    border-radius: 4px;
+}
+
+
+.vacxin-package-item__name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #032346;
+    line-height: 2rem;
+    margin: 10px 0 0 0;
+    padding: 10px 6px 0 6px;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+
+.vacxin-package-item__price {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    justify-content: center;
+    padding: 10px 6px 10px 6px;
+
+}
+
+.vacxin-package-item__description1 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #262626!important;
+    padding: 20px 10px 0 10px;
+    display: flex;
+}
+
+.vacxin-package-item__description2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #595959!important;
+    display: flex;
+    justify-content: center; 
+    padding: 10px 10px 0 10px;
+    height: 140px;
+}
+
+.vacxin-package-item_addcart_btn {
+    display: flex;
+    margin: auto;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 500;
+    font-size: 1.8rem;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+    /* top: 20px; */
+}
+
+.vacxin-package-item__icon {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+
+.vacxin-package-info {
+    display: flex;
+    padding-top: 20px;
+}
+
+.vacxin-package-info__catalog {
+    background-color: rgb(243, 144, 33);
+    width: 140px;
+    border-radius: 6px;
+    position: relative;
+    left: 30px;
+    height: 34px;
+}
+
+.vacxin-package-info__catalog-icon {
+    font-size: 2rem;
+    padding-left: 16px;
+    color: var(--white-color);
+}
+
+.vacxin-package-info__catalog-title {
+    font-size: 2rem;
+    color: var(--white-color);
+}
+
+.vacxin-package-info__title {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--primary-color);
+
+}
+
+.vacxin-package-info__search {
+    width: 300px;
+    height: 40px;
+}
+
+.vacxin-package-info_search_form {
+    font-size: 1.6rem;
+    border-radius: 16px;
+    border: 1px solid var(--black-color);
+}
+
+.vacxin-package-info_search__icon {
+    width: 30px;
+    font-size: 2rem;
+}
+
+.vacxin-package-info_search__btn {
+    border-radius: 16px;
+    background-color: var(--primary-color);
+}
+
+
+
+
+.vacxin-chosen-item {
+    display: block;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin-top: 40px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    min-height: 260px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.vacxin-chosen-item__info {
+    padding: 0 0 30px 0;
+}
+
+.vacxin-chosen-item__title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid #dad5d5;
+    padding: 20px 0;
+}
+
+.vacxin-chosen-item__icon {
+    width: 30px;
+    font-size: 2rem;
+}
+
+.vacxin-chosen-item__name {
+    font-size: 1.8rem;
+    color: #595959;
+
+    line-height: 2rem;
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    display: block;
+    /* overflow: hidden; */
+}
+
+.vacxin-chosen-item__price {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    
+}
+
+.vacxin-chosen-item_dk_btn {
+    /* border-top: 1px solid #dad5d5; */
+    background-color: rgb(243, 144, 33);
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    display: flex;
+    margin: auto;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    align-items: center;
+    justify-content: center;
+
+}
