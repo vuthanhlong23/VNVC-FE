@@ -1,0 +1,122 @@
+.header_datmuavx1_vnvc {
+    display: flex;
+    justify-content: flex-start;
+    height: 90px;
+    border-bottom: 1px solid var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.header_datmuavx1_vnvc-logo {
+    height: 90px;
+    padding-right: 20px;
+    border-right: 1px solid var(--white-color);
+}
+
+
+.logo-vnvc-datmuavx1 {
+    height: 70px;
+    position: relative;
+    padding-left: 50px;
+    padding-top: 28px;
+}
+
+
+.header_datmuavx1_vnvc__navbar-list {
+    list-style: none;   
+    display: flex;
+    padding-left: 0;
+    height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-first-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.header_datmuavx1_vnvc__worktimedescription {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_datmuavx1_vnvc__worktimedescription .header_datmuavx1_vnvc__navbar-item_icon {
+    padding-top: 30px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription div {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription span {
+    font-size: 1.4rem;
+}
+
+.header_datmuavx1_vnvc__navbar-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    line-height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-item-right {
+    padding-left: 160px;
+}
+
+.header_datmuavx1_vnvc__navbar-item_icon {
+    font-size: 2.4rem;
+    color: rgb(129, 187, 250);  
+    padding-right: 6px;
+}
+
+.header_datmuavx1_vnvc__navbar-item a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 650;
+    font-size: 1.6rem;
+}
+
+.text-center{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: #6d6e70;
+}
+
+.noti-page {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #6d6e70;
+    text-align: center;
+    padding: 0 450px;
+}
+
+.Hotline-1 {
+    font-weight: 600;
+    color: #6d6e70;
+    text-align: center;
+    padding: 0 528px;
+}
+
+.Hotline-2 {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    padding: 0 585px;
+}
+
+.btn {
+    /* border-top: 1px solid #dad5d5; */
+    background-color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    margin: 10px auto 0 auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: center;
+
+}

@@ -115,7 +115,17 @@
     padding: 10px 6px 0 6px;
     text-align: center;
     display: block;
+    /* overflow: hidden; */
     overflow: hidden;
+    /* Làm ra dấu ... thay cho những chổ chữ bị ẩn */
+    display: block;
+    /* Chỉ chạy trên một số brower thui */
+    display: -webkit-box;
+    /* Hướng của dòng chữ theo chiều nào (chiều dọc trong trường hợp này) */
+    -webkit-box-orient: vertical;
+    /* Hạn chế cái phần content của một block (set number of line)
+    2: là mình tác động đến dòng số 2 */
+    -webkit-line-clamp: 2;
 }
 
 .vacxin-package-item__price {
@@ -143,7 +153,14 @@
     display: flex;
     justify-content: center; 
     padding: 10px 10px 0 10px;
-    height: 140px;
+    height: 98px;
+
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    margin-bottom: 42px;
 }
 
 .vacxin-package-item_addcart_btn {
@@ -262,10 +279,14 @@
     color: #595959;
 
     line-height: 2rem;
-    margin: 10px 0 0 0;
-    padding: 10px 20px;
+    margin: 20px 0 10px 0;
+    padding: 0px 20px;
     display: block;
-    /* overflow: hidden; */
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .vacxin-chosen-item__price {
@@ -294,4 +315,16 @@
     align-items: center;
     justify-content: center;
 
+}
+
+.vacxin-chosen-item__name-wrap {
+    display: flex;
+}
+
+.vacxin-chosen-item__name-icon  {
+    font-size: 2rem;
+    color: var(--primary-color);
+    line-height: 2rem;
+    margin: 20px 0 10px 0;
+    padding-right: 30px;
 }

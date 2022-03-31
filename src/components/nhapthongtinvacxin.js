@@ -11,45 +11,6 @@ const NhapThongTinVacXin = () => {
 
     return (
         <div>
-            <header>
-                <div className="grid">
-                    <div className="header_datmuavx1_vnvc">
-                        <div className="header_datmuavx1_vnvc-logo">
-                            <img className="logo-vnvc-datmuavx1" src={Logo} alt=""/>
-                        </div>
-                        <div>
-                            <nav className="header_datmuavx1_vnvc__navbar">
-                                <ul className="header_datmuavx1_vnvc__navbar-list">
-                                    <li className="header_datmuavx1_vnvc__navbar-first-item">
-                                        <div className="header_datmuavx1_vnvc__worktimedescription">
-                                            <i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-calendar-alt"></i>
-                                            <div>
-                                                <span className="row" >Giờ làm việc: Từ thứ 2 đến chủ nhật</span>
-                                                <span className="row">Từ 7h30 - 17h00 (Không nghỉ trưa)</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="header_datmuavx1_vnvc__navbar-item header_datmuavx1_vnvc__navbar-item-right">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-home"></i>
-                                        TRANG CHỦ VNVC
-                                        </Link>
-                                    </li>
-                                    <li className="header_datmuavx1_vnvc__navbar-item">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-shield-virus"></i>DANH MỤC VẮC XIN</Link>
-                                    </li>
-                                    <li className="header_datmuavx1_vnvc__navbar-item">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-search"></i>TRA CỨU</Link>
-                                    </li>
-                                    <li className="header_datmuavx1_vnvc__navbar-item">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-book-medical"></i>FAQ</Link>
-                                    </li>
-                                </ul>   
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </header>
-
             <div className="container_nhapthongtinvx">
                 <div className="grid">
                     <div className="row">
@@ -126,11 +87,11 @@ const NhapThongTinVacXin = () => {
                             <div className="nhapthongtinvx-chosen-item">
                                 <h4 className="nhapthongtinvx-chosen-item__title"><i className="nhapthongtinvx-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
                                 <div className="nhapthongtinvx-chosen-item__info">
-                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
-                                    <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
-                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
-                                    <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
-                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                    <div class="vacxin-chosen-item__name-wrap">
+                                        <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX BFSB SDFGSDFG SDFGFDG SDFGSDFGDFS</span>
+                                        <i class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
+                                    </div>
+
                                     <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
                                 </div>
                                 <div className="nhapthongtinvx_chosen_item_total">   

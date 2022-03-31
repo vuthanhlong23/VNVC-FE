@@ -1,0 +1,148 @@
+
+.slider-vnvc {
+    width: 100%;
+}
+
+.logo-vnvc {
+    height: 60px;
+    position: relative;
+    padding-left: 60px;
+    padding-top: 5px;
+
+}
+
+.logo-eplus {
+    height: 26px;
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 6px;
+}
+
+.header_desktop_vnvc {
+    display: flex;
+    justify-content: flex-start;
+    height: 70px;
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+.header_desktop_vnvc__navbar-list {
+    list-style: none;   
+    display: flex;
+    padding-left: 200px;
+}
+
+.header_desktop_vnvc__navbar-item {
+    margin: 0 12px;
+    color: var(--black-color);
+    line-height: 70px;
+}
+
+.header_desktop_vnvc__navbar-item_icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);  
+    padding-right: 4px;
+}
+
+.header_desktop_vnvc__navbar-item a {
+    text-decoration: none;
+    color:  var(--primary-color);
+    font-weight: 650;
+    font-size: 1.4rem;
+}
+
+.header_desktop_vnvc__navbar-hotline a{
+    color: #FF7400 !important;
+    font-size: 1.6rem;
+}
+
+
+.clear {
+    display: block; clear: both; width: 100%; height: 1px;
+}
+
+.title{
+    background-color:#e9e6e6;
+    width: 100vw;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px 0 20px;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width:992px) {
+    .col-md-12{
+        width: 960px;
+        margin: 0px auto;
+    }
+}
+
+@media (min-width:768px) {
+    .col-sm-6{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+.center-column{
+    padding-top: 0;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.text-center{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 0!important;
+    margin-top: 0!important;
+    color: #041656;
+}
+
+.col-sm-offset-2{
+    margin-left: 10%;
+}
+
+.col-sm-8{
+    width: 80%
+}
+
+.indexing{
+    text-align: left;
+    margin-bottom: 10px;
+    color: #041656;
+}
+
+form{
+    display: block;
+    margin-top: 0em;
+}
+
+.control-label{
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-control{
+    height:auto;
+    background: #e9e6e6;
+    font-size: 14px;
+    width: 96%;
+}
+
+.button_register{
+    margin-top: 15px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius:20px!important;
+    color: #fff;
+    background-color: #041656;
+    font-size: 14px;
+}

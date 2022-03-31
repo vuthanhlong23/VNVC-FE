@@ -4,8 +4,9 @@ import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/datmuavx1.css'
 import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
+import Logo from "../assets/res/logovnvc.png";
 
-const NhapThongTinVacXin_KHTT = () => {
+const NhapThongTinVacXin = () => {
     
 
     return (
@@ -34,22 +35,6 @@ const NhapThongTinVacXin_KHTT = () => {
                                         Quý khách chưa là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
-                            </div>
-
-                            <div className="row">
-                                <span className="nhapthongtinvx_personalinfo-title">ĐĂNG NHẬP THÀNH VIÊN KHÁCH HÀNG THÂN THIẾT</span>
-                                <span className="nhapthongtinvx_mota-title">Nhập mã thẻ thành viên của quý khách</span>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-8">
-                                    <div className="input-group mb-3">
-                                        <input type="text" placeholder="Nhập mã thẻ thành viên của quý khách" className="form-control"></input>  
-                                    </div>
-                                </div>
-                                <div className="col-4">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_khtt_tieptuc">TIẾP TỤC</button>
-                                </div>
                             </div>
                             
                             <div className="row">
@@ -102,11 +87,11 @@ const NhapThongTinVacXin_KHTT = () => {
                             <div className="nhapthongtinvx-chosen-item">
                                 <h4 className="nhapthongtinvx-chosen-item__title"><i className="nhapthongtinvx-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
                                 <div className="nhapthongtinvx-chosen-item__info">
-                                    <div class="vacxin-chosen-item__name-wrap">
-                                        <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX BFSB SDFGSDFG SDFGFDG SDFGSDFGDFS</span>
-                                        <i class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
-                                    </div>
-
+                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                    <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
+                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
+                                    <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
+                                    <span className="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
                                     <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
                                 </div>
                                 <div className="nhapthongtinvx_chosen_item_total">   
@@ -124,4 +109,4 @@ const NhapThongTinVacXin_KHTT = () => {
     );
 }
 
-export default NhapThongTinVacXin_KHTT;
+export default NhapThongTinVacXin;

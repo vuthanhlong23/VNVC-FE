@@ -3,15 +3,19 @@
 }
 
 .nhapthongtinvx_heading-title{
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 500;
     color: var(--primary-color);
     text-align: center;
     padding-top: 20px;
 }
 
+.form-check-input {
+    font-size: 1.6rem;
+}
+
 .nhapthongtinvx_personalinfo-title{
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     font-weight: 500;
     color: var(--primary-color);
     padding-top: 20px;
@@ -19,28 +23,33 @@
 
 .nhapthongtinvx_customertype{
     color:black;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 
 .nhapthongtinvx_personalinfo-description{
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding-bottom: 20px;
 }
 
 .nhapthongtinvx_input-title{
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 500;
     padding-bottom: 5px;
 }
 
 .nhapthongtinvx_mota-title{
     padding-bottom: 5px;
+    font-size: 1.4rem;
 }
 
 .nhapthongtinvx_kiemtra-note{
-    font-size: 1rem;
+    font-size: 1.4rem;
     padding-bottom: 20px;
     color: var(--primary-color);
+}
+
+.form-control {
+    font-size: 1.6rem;
 }
 
 .nhapthongtinvx-chosen-item{
@@ -74,19 +83,30 @@
     font-size: 2rem;
 }
 
+.nhapthongtinvx_input-item {
+    height: 32px;
+    font-size: 1.6rem;
+    color: rgb(152, 149, 149);
+}
+
 .nhapthongtinvx-chosen-item__name{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: #595959;
 
     line-height: 2rem;
-    margin: 10px 0 0 0;
-    padding: 5px 20px;
+    margin: 20px 0 10px 0;
+    padding: 0px 20px;
     display: block;
-    /* overflow: hidden; */
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    
 }
 
 .nhapthongtinvx-chosen-item__price{
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     color: var(--primary-color);
     font-weight: 500;
     display: flex;
@@ -114,6 +134,12 @@
     padding-left: 60px;
 }
 
+
+.nhapthongtinvx_chosen_vacxin-item {
+    font-size: 1.4rem;
+    color: rgb(145, 141, 141);
+}
+
 .nhapthongtinvx_chosen-item__xemdktt {
     /* border-top: 1px solid #dad5d5; */
     background-color: var(--primary-color);
@@ -137,6 +163,8 @@
     background-color: var(--primary-color);
     width: 70%;
     border-radius: 8px;
+    height: 32px;
+    font-size: 1.4rem;
 }
 
 .nhapthongtinvx-package-item{
@@ -213,8 +241,9 @@
     color: var(--white-color);
     background-color: #35944a;
     width: 100%;
-    height: 30px;
+    height: 40px;
     border-radius: 8px;
+    font-size: 1.4rem
 }
 
 .nhapthongtinvx_btn_tieptuc_tt{
@@ -225,8 +254,9 @@
     color: var(--white-color);
     background-color: var(--primary-color);
     width: 80%;
-    height: 30px;
+    height: 40px;
     border-radius: 8px;
+    font-size: 1.4rem;
 }
 
 .nhapthongtinvx_btn_khtt_tieptuc{
@@ -235,3 +265,17 @@
     width: 70%;
     border-radius: 8px;
 }
+
+
+.nhapthongtinvx-chosen-item__name-wrap {
+    display: flex;
+}
+
+.nhapthongtinvx-chosen-item__name-icon  {
+    font-size: 2rem;
+    color: var(--primary-color);
+    line-height: 2rem;
+    margin: 20px 0 10px 0;
+    padding-right: 30px;
+}
+

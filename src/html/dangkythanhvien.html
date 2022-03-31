@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../stylesheets/base.css" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="../fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+ 
+    <link rel="stylesheet" href="../css/dangkythanhvien.css">
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+
+
+<body>
+    
+    <div class="app">
+        <header>
+            <div class="grid">
+                <img class="slider-vnvc" src="./../res/slider.jpg" alt=""> 
+            </div>
+            <div class="grid">
+                <div class="header_desktop_vnvc">
+                <img class="logo-vnvc" src="./../res/logovnvc.png" alt=""> 
+
+                    <nav class="header_desktop_vnvc__navbar">
+                        <ul class="header_desktop_vnvc__navbar-list">
+                            <li class="header_desktop_vnvc__navbar-item">
+                                <a href="#"><i class="header_desktop_vnvc__navbar-item_icon fas fa-map-marker-alt"></i>TÌM TRUNG TÂM</a>
+                            </li>
+                            <li class="header_desktop_vnvc__navbar-item">
+                                <a href="#"><i class="header_desktop_vnvc__navbar-item_icon far fa-calendar-alt"></i>ĐĂNG KÝ TIÊM</a>
+                            </li>
+                            <li class="header_desktop_vnvc__navbar-item">
+                                <a href="#"><i class="header_desktop_vnvc__navbar-item_icon fas fa-shopping-cart"></i>ĐẶT MUA VẮC XIN</a>
+                            </li>
+                            <li class="header_desktop_vnvc__navbar-item">
+                                <a href="#"><i class="header_desktop_vnvc__navbar-item_icon fas fa-question-circle"></i>TƯ VẤN</a>
+                            </li>
+                            <li class="header_desktop_vnvc__navbar-item">
+                                <a href="#"><img class="logo-eplus" src="./../res/eplus.png" alt=""></a>
+                            </li>
+                            <li class="header_desktop_vnvc__navbar-item header_desktop_vnvc__navbar-hotline">
+                                <a href="#">Hotline: 028 7300 6595</a>
+                            </li>
+                        </ul>   
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="clear"></div>
+        
+        <div class="main_content">
+            <div class="row">
+                <div class="title">
+                    <h1 class="text-center">
+                        <span>Đăng ký thành viên</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 center-column">
+                        <div class="form">
+                            <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+                                <form class="form_register">
+                                    <div class="indexing">
+                                        <h3>Thông tin cá nhân</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-firstname">Họ và Tên</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="firstname" value placeholder="Họ và tên" id="input-firstname" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-gender">Giới tính</label>
+                                                <div class="col-xs-12">
+                                                    <select id="gender" name="gender" class="form-control">
+                                                        <option value="Nam">Nam</option>
+                                                        <option value="Nữ">Nữ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-numberphone">Số điện thoại</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="numberphone" value placeholder="Số điện thoại" id="input-numberphone" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-birth">Ngày sinh</label>
+                                                <div class="col-xs-12">
+                                                    <input type="date" name="birth" id="input-birth" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-cccd">CMND/CCCD</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="cccd" value placeholder="CMND/CCCD" id="input-cccd" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-customerId">Mã khách hàng(Nếu có)</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="customerId" value placeholder="Mã khách hàng" id="input-customerId" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-email">Email</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="email" value placeholder="Email" id="input-email" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-address">Số nhà - Tên đường</label>
+                                                <div class="col-xs-12">
+                                                    <input type="text" name="address" value placeholder="Địa chỉ" id="input-address" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-city">Thành phố/ Tỉnh</label>
+                                                <div class="col-xs-12">
+                                                    <select name="city" id="input-city" class="form-control">
+                                                        <option value>--- Chọn ---</option>
+                                                        <option value="1">Thủ đô Hà Nội</option>
+                                                        <option value="79">Thành phố Hồ Chí Minh</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-address">Quận/ Huyện</label>
+                                                <div class="col-xs-12">
+                                                    <select name="zone" id="input-zone" class="form-control">
+                                                        <option value>--- Chọn ---</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="row required">
+                                                <label class="col-xs-12 control-label" for="input-city">Phường/ Xã</label>
+                                                <div class="col-xs-12">
+                                                    <select name="ward" id="input-ward" class="form-control">
+                                                        <option value>--- Chọn ---</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4><b>Lưu ý:</b> Các mục dấu sao không được bỏ trống & phải điền đầy đủ, chính xác</h4>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="title">
+                    <div class="buttons_">
+                        <div class="text-center">
+                            <input type="button" id="click_register" value="Đăng ký" class="button_register">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

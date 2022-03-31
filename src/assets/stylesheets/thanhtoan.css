@@ -1,0 +1,263 @@
+
+.header_datmuavx1_vnvc {
+    display: flex;
+    justify-content: flex-start;
+    height: 90px;
+    border-bottom: 1px solid var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.header_datmuavx1_vnvc-logo {
+    height: 90px;
+    padding-right: 20px;
+    border-right: 1px solid var(--white-color);
+}
+
+
+.logo-vnvc-datmuavx1 {
+    height: 70px;
+    position: relative;
+    padding-left: 50px;
+    padding-top: 28px;
+}
+
+
+.header_datmuavx1_vnvc__navbar-list {
+    list-style: none;   
+    display: flex;
+    padding-left: 0;
+    height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-first-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.header_datmuavx1_vnvc__worktimedescription {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_datmuavx1_vnvc__worktimedescription .header_datmuavx1_vnvc__navbar-item_icon {
+    padding-top: 30px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription div {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.header_datmuavx1_vnvc__worktimedescription span {
+    font-size: 1.4rem;
+}
+
+.header_datmuavx1_vnvc__navbar-item {
+    margin: 0 12px;
+    color: var(--white-color);
+    line-height: 90px;
+}
+
+.header_datmuavx1_vnvc__navbar-item-right {
+    padding-left: 160px;
+}
+
+.header_datmuavx1_vnvc__navbar-item_icon {
+    font-size: 2.4rem;
+    color: rgb(129, 187, 250);  
+    padding-right: 6px;
+}
+
+.header_datmuavx1_vnvc__navbar-item a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 650;
+    font-size: 1.6rem;
+}
+
+
+.title{
+    background-color: var(--white-color);
+    width: 100%;
+    height: 53px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px 0 20px;
+}
+
+.text-center{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: #2a3891;
+}
+
+.payment_buyer_information {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.payment_items {
+    padding-top: 10px;
+}
+
+.payment_buyer_description {
+    font-size: 1.2rem;
+}
+
+.main-content {
+    padding: 0 60px;
+}
+
+.payment_buyer_input_title {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.payment_items_address {
+    border: 0px;
+    padding-top: 10px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.payment_item_title {
+    font-size: 1.2rem;
+}
+
+.payment_type_title {
+    padding-top: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.pament-check-input{
+    margin-top: 10px;
+}
+
+.payment_check_type {
+    padding-top: 6px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.payment_vacxin-chosen-item {
+    display: block;
+    text-decoration: none;
+    background-color: var(--white-color);
+    margin-top: 40px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    min-height: 260px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.payment_vacxin-chosen-item__info {
+    padding: 0 0 0 0;
+}
+
+.payment_vacxin-chosen-item__title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid #dad5d5;
+    padding: 20px 0;
+}
+
+.payment_vacxin-chosen-item__icon {
+    width: 30px;
+    font-size: 2rem;
+}
+ 
+
+.payment_vacxin-chosen-item_dk_btn {
+    /* border-top: 1px solid #dad5d5; */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    margin: 10px auto 0 auto;
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.payment_vacxin-chosen-item__name {
+    font-size: 1.8rem;
+    color: #595959;
+    line-height: 2rem;
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    display: block;
+    /* overflow: hidden; */
+}
+
+.payment_vacxin-chosen-item__price {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+}   
+
+.payment_vacxin-chosen-item__total {
+    display: flex;
+    padding-top: 10px;  
+}
+
+.payment_vacxin-chosen-item__name__total {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 0 0 0 0;
+    padding: 6px 20px;
+}
+
+.payment_vacxin-chosen-item__price__total {
+    font-size: 1.8rem;
+    color: red;
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-left: 60px;
+    padding-top: 2px;
+}   
+
+.payment_vacxin-chosen-item__local {
+    display: flex;
+    padding-top: 15px;   
+}
+
+.payment_vacxin-chosen-item__local_address {
+    font-size: 1.8rem;
+    color: #595959;
+    line-height: 2rem;
+    margin: 0 0 0 0;
+    padding: 6px 20px;
+}
+
+.payment_vacxin-chosen-item__location {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    padding-top: 34px;
+    padding-left: 62px;
+}   
