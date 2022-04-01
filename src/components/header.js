@@ -15,7 +15,7 @@ const Header = () => {
                 <div className="grid">
                     <div className="header_datmuavx1_vnvc">
                         <div className="header_datmuavx1_vnvc-logo">
-                            <img className="logo-vnvc-datmuavx1" src={Logo} alt=""/>
+                            <Link to="/trangchu"><img className="logo-vnvc-datmuavx1" src={Logo} alt=""/></Link>
                         </div>
                         <div>
                             <nav className="header_datmuavx1_vnvc__navbar">
@@ -30,12 +30,12 @@ const Header = () => {
                                         </div>
                                     </li>
                                     <li className="header_datmuavx1_vnvc__navbar-item header_datmuavx1_vnvc__navbar-item-right">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-home"></i>
+                                        <Link to="/trangchu"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-home"></i>
                                         TRANG CHỦ VNVC
                                         </Link>
                                     </li>
                                     <li className="header_datmuavx1_vnvc__navbar-item">
-                                        <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-shield-virus"></i>DANH MỤC VẮC XIN</Link>
+                                        <Link to="/danhmucvaccine"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-shield-virus"></i>DANH MỤC VẮC XIN</Link>
                                     </li>
                                     <li className="header_datmuavx1_vnvc__navbar-item">
                                         <Link to="#"><i className="header_datmuavx1_vnvc__navbar-item_icon fas fa-search"></i>TRA CỨU</Link>

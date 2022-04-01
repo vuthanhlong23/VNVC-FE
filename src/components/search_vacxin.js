@@ -5,14 +5,15 @@ import '../assets/stylesheets/datmuavx1.css'
 import '../assets/stylesheets/base.css'
 import axios from 'axios';
 
-const Datmuavx1 = () => {
+const Search_Vaccine = () => {
     //search vaccine
     let history = useHistory()  
     const [SearchVaccineList, setSearchVaccineList] = useState([]);
+    
     useEffect(() => {
         const fetchSearchVaccineList = async () =>{
             try {
-                const res = await axios.get(`https://localhost:44300/api/vaccine/getall`) 
+                const res = await axios.get(`https://localhost:44300/api/vaccine/getinfo/${localStorage.getItem("vaccine_name")}`) 
                                         .then(res => {
                                             setSearchVaccineList(res.data)    
                                             console.log(res.data)
@@ -25,14 +26,12 @@ const Datmuavx1 = () => {
         fetchSearchVaccineList();
     }, [])
 
-
     const [vaccine_name, setVaccineName] = useState('');
 
     const handleSuccessfulAuth = () => {
         history.push("/search_vaccine");
         localStorage.setItem("vaccine_name",vaccine_name)
     }
-
 
     return (
         <div>
@@ -102,4 +101,4 @@ const Datmuavx1 = () => {
     );
 }
 
-export default Datmuavx1;
+export default Search_Vaccine;

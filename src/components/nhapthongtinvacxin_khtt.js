@@ -22,14 +22,14 @@ const NhapThongTinVacXin_KHTT = () => {
                     <div className="row">
                         <div className="col-8">
                             <div className="row">
-                                <Link to="#" className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                                <Link to="/nhapthongtinvacxin_khtt" className="form-check">
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault1">
                                         Quý khách là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
-                                <Link to="#" className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                                <Link to="/nhapthongtinvacxin_khktt" className="form-check">
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault2">
                                         Quý khách chưa là thành viên khách hàng thân thiết
                                     </label>

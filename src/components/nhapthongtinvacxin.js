@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
 import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/datmuavx1.css'
 import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
-import Logo from "../assets/res/logovnvc.png";
+import React, {Fragment,useEffect, useState} from 'react';
+import {Link, useHistory} from 'react-router-dom';
 
 const NhapThongTinVacXin = () => {
-    
+    let history = useHistory()
 
     return (
         <div>
@@ -23,14 +22,14 @@ const NhapThongTinVacXin = () => {
                     <div className="row">
                         <div className="col-8">
                             <div className="row">
-                                <Link to="#" className="form-check">
+                                <Link to="/nhapthongtinvacxin_khtt" className="form-check">
                                     <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault1">
                                         Quý khách là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
-                                <Link to="#" className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                                <Link to="/nhapthongtinvacxin_khktt" className="form-check">
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault2">
                                         Quý khách chưa là thành viên khách hàng thân thiết
                                     </label>

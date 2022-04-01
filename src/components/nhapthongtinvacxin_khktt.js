@@ -6,7 +6,25 @@ import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
 
 const NhapThongTinVacXin_KHKTT = () => {
-    
+    const [customer_name, setName] = useState('')
+    const [customer_gender, setGender] = useState('')
+    const [customer_dateofbirth, setDateofbirth] = useState('')
+    const [customer_phone, setPhone] = useState('')
+    const [customer_relationship, setRelationship] = useState('')
+    const [customer_email, setEmail] = useState('')
+    const [customer_city, setCity] = useState('')
+    const [customer_address, setAddress] = useState('')
+    const [customer_district, setDistrict] = useState('')
+    const [customer_commune, setCommune] = useState('')
+    const [customer_place, setPlace] = useState('')
+    const [customer_vaccination_center, setVaccination_center] = useState('')
+
+
+    // function AddLocalCustomer(){
+    //     customers = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
+    //     "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+    //     return customers
+    // } 
 
     return (
         <div>
@@ -22,20 +40,19 @@ const NhapThongTinVacXin_KHKTT = () => {
                     <div className="row">
                         <div className="col-8">
                             <div className="row">
-                                <Link to="#" className="form-check">
+                                <Link to="/nhapthongtinvacxin_khtt" className="form-check">
                                     <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault1">
                                         Quý khách là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
-                                <Link to="#" className="form-check">
+                                <Link to="/nhapthongtinvacxin_khktt" className="form-check">
                                     <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault2">
                                         Quý khách chưa là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
                             </div>
-
                             <div className="row">
                                 <span className="nhapthongtinvx_personalinfo-title">
                                     THÔNG TIN NGƯỜI ĐƯỢC TIÊM
@@ -97,11 +114,18 @@ const NhapThongTinVacXin_KHKTT = () => {
                             <div className="row">
                                 <div className="col-6">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Họ và tên" className="form-control nhapthongtinvx_input-item"></input>  
+                                        <input
+                                            type="text" 
+                                            placeholder="Họ và tên" 
+                                            className="form-control nhapthongtinvx_input-item"
+                                            value={customer_name}
+                                            onChange={(e)=> setName(e.target.value)}
+                                            required
+                                        />  
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <select className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={customer_relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Chọn mối quan hệ</option>
                                         <option value="1">Bản thân</option>
                                         <option value="2">Cha</option>
@@ -131,7 +155,14 @@ const NhapThongTinVacXin_KHKTT = () => {
                             <div className="row">
                                 <div className="col-6">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Ngày sinh" className="form-control nhapthongtinvx_input-item"></input>  
+                                        <input 
+                                            type="text" 
+                                            placeholder="Ngày sinh" 
+                                            className="form-control nhapthongtinvx_input-item"
+                                            value={customer_dateofbirth}
+                                            onChange={(e)=> setDateofbirth(e.target.value)}
+                                            required
+                                        />  
                                     </div>
                                 </div>
                                 <div className="col-6">
@@ -157,12 +188,26 @@ const NhapThongTinVacXin_KHKTT = () => {
                             <div className="row">
                                 <div className="col-6">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Số điện thoại" className="form-control nhapthongtinvx_input-item"></input>  
+                                        <input 
+                                            type="text" 
+                                            placeholder="Số điện thoại" 
+                                            className="form-control nhapthongtinvx_input-item"
+                                            value={customer_phone}
+                                            onChange={(e)=> setPhone(e.target.value)}
+                                            required
+                                        />  
                                     </div>
                                 </div>
                                 <div className="col-6">
                                     <div className="input-group mb-3">
-                                        <input type="email" placeholder="Email" className="form-control nhapthongtinvx_input-item"></input>  
+                                        <input 
+                                            type="email" 
+                                            placeholder="Email" 
+                                            className="form-control nhapthongtinvx_input-item"
+                                            value={customer_email}
+                                            onChange={(e)=> setEmail(e.target.value)}
+                                            required
+                                        />  
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +218,14 @@ const NhapThongTinVacXin_KHKTT = () => {
         
                             <div className="row">
                                 <div className="input-group mb-3">
-                                    <input type="text" placeholder="Địa chỉ" className="form-control nhapthongtinvx_input-item"></input>  
+                                    <input 
+                                        type="text" 
+                                        placeholder="Địa chỉ" 
+                                        className="form-control nhapthongtinvx_input-item"
+                                        value={customer_address}
+                                        onChange={(e)=> setAddress(e.target.value)}
+                                        required    
+                                    />  
                                 </div>
                             </div>
         
@@ -198,17 +250,38 @@ const NhapThongTinVacXin_KHKTT = () => {
                             <div className="row">
                                 <div className="col-4">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Tỉnh/thành" className="form-control"></input>  
+                                        <input 
+                                            type="text" 
+                                            placeholder="Tỉnh/thành" 
+                                            className="form-control"
+                                            value={customer_city}
+                                            onChange={(e)=> setCity(e.target.value)}
+                                            required
+                                        />  
                                     </div>
                                 </div>
                                 <div className="col-4">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Quận/huyện" className="form-control"></input>
+                                        <input 
+                                            type="text" 
+                                            placeholder="Quận/huyện" 
+                                            className="form-control"
+                                            value={customer_district}
+                                            onChange={(e)=> setDistrict(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                 </div>
                                 <div className="col-4">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Phường/xã" className="form-control"></input>
+                                        <input 
+                                            type="text" 
+                                            placeholder="Phường/xã" 
+                                            className="form-control"
+                                            value={customer_commune}
+                                            onChange={(e)=> setCommune(e.target.value)}
+                                            required
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +303,7 @@ const NhapThongTinVacXin_KHKTT = () => {
         
                             <div className="row">
                                 <div className="col-6">
-                                    <select className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={customer_city} onChange={(e)=> setCity(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option value="1">Thành Phố Hồ Chí Minh</option>
                                         <option value="2">Thành Phố Hà Nội</option>
                                         <option value="3">Thành Phố Đà Nẫng</option>
@@ -239,7 +312,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                     </select>
                                 </div>
                                 <div className="col-6">
-                                    <select className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={customer_vaccination_center} onChange={(e)=> setVaccination_center(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Trung tâm VNVC</option>
                                         <option value="1">VNVC Bình Thạnh</option>
                                     </select>
@@ -287,11 +360,13 @@ const NhapThongTinVacXin_KHKTT = () => {
                                     <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_nhaplaithongtin">NHẬP LẠI THÔNG TIN</button>
                                 </div>
                                 <div className="col-4 nhapthongtinvx_btn_tieptuc_tt">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_tieptuc">TIẾP TỤC</button>
+                                    <button 
+                                        // onClick={(e)=>localStorage.setItem("customers",AddLocalCustomer())} 
+                                        type="button" className="btn btn-outline-primary nhapthongtinvx_btn_tieptuc">TIẾP TỤC</button>
                                 </div>
                             </div>
                         </div>
-
+0
                         <div className="col-4">
                             <div className="nhapthongtinvx-chosen-item">
                                 <h4 className="nhapthongtinvx-chosen-item__title"><i className="nhapthongtinvx-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>

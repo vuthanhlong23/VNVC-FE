@@ -7,7 +7,6 @@ import '../assets/stylesheets/thanhtoan.css'
 
 const Thanhtoan = () => {
     
-
     return (
         <div>
             <div className="main-content">

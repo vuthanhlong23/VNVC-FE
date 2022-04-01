@@ -32,7 +32,7 @@ const Trangchu = () => {
                                     <Link to="#"><i className="header_desktop_vnvc__navbar-item_icon far fa-calendar-alt"></i>ĐĂNG KÝ TIÊM</Link>
                                 </li>
                                 <li className="header_desktop_vnvc__navbar-item">
-                                    <Link to="#"><i className="header_desktop_vnvc__navbar-item_icon fas fa-shopping-cart"></i>ĐẶT MUA VẮC XIN</Link>
+                                    <Link to="/datmuavacxin"><i className="header_desktop_vnvc__navbar-item_icon fas fa-shopping-cart"></i>ĐẶT MUA VẮC XIN</Link>
                                 </li>
                                 <li className="header_desktop_vnvc__navbar-item">
                                     <Link to="#"><i className="header_desktop_vnvc__navbar-item_icon fas fa-question-circle"></i>TƯ VẤN</Link>
