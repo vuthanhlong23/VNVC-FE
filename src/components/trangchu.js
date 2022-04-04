@@ -9,9 +9,6 @@ import eplus from "../assets/res/eplus.png";
 import slider_1 from "../assets/res/slider-1.jpg";
 import slider_2 from "../assets/res/slider-2.png";
 
-
-
-
 const Trangchu = () => {
     return (
         <div>

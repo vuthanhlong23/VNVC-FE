@@ -9,11 +9,11 @@ const Search_Vaccine = () => {
     //search vaccine
     let history = useHistory()  
     const [SearchVaccineList, setSearchVaccineList] = useState([]);
-    
+    const [CartVaccineList, setCartVaccineList] = useState([])
     useEffect(() => {
         const fetchSearchVaccineList = async () =>{
             try {
-                const res = await axios.get(`https://localhost:44300/api/vaccine/getinfo/${localStorage.getItem("vaccine_name")}`) 
+                const res = await axios.get(`http://vnvc.somee.com/api/vaccine/getinfo/${localStorage.getItem("vaccine_name")}`) 
                                         .then(res => {
                                             setSearchVaccineList(res.data)    
                                             console.log(res.data)
@@ -23,14 +23,66 @@ const Search_Vaccine = () => {
                 console.log('Failed to fetch store list', error)
             }
         } 
+        const fetchCartVaccineList = async () =>{
+            try {
+                const res = await axios.get(`https://localhost:44300/api/cart/getcart/2`) 
+                                        .then(res => {
+                                            setCartVaccineList(res.data)    
+                                            console.log(res.data)
+                                        })
+                                        .catch(err => console.log(err));
+            } catch (error) {
+                console.log('Failed to fetch store list', error)
+            }
+        } 
         fetchSearchVaccineList();
+        fetchCartVaccineList();
     }, [])
+
+    const AddVaccineToCart = (id,name,price,func,description,event) =>{
+        try {
+            axios({
+                url: `https://localhost:44300/api/cart/addcart/2`,
+                method: 'post',
+                data:
+                {
+                    id: id,
+                    name: name,
+                    price: price,
+                    function: func,
+                    description: description,
+                    active: true,
+                    create_date: "2022-03-29T17:00:00Z"
+                }
+            },
+            { withCredentials: true }
+            )
+            .then(res => {
+                if(res.data===1)
+                {
+                    alert("Thêm sản phẩm thành công")
+                    window.location.reload()
+                }
+                else alert("Sản phẩm đã tồn tại trong giỏ hàng")
+            })
+            .catch(err => console.log(err)
+            );
+        } catch (error) {
+            console.log('Failed', error)
+        }
+        event.preventDefault();
+    } 
 
     const [vaccine_name, setVaccineName] = useState('');
 
     const handleSuccessfulAuth = () => {
         history.push("/search_vaccine");
         localStorage.setItem("vaccine_name",vaccine_name)
+    }
+
+    const handleSuccessfulAuth1 = () => {
+        history.push("/nhapthongtinvacxin");
+        localStorage.setItem("item",JSON.stringify(CartVaccineList))
     }
 
     return (
@@ -73,7 +125,7 @@ const Search_Vaccine = () => {
                                                 </div>
                                                 <span className="vacxin-package-item__description1">Phòng bệnh:</span>
                                                 <span className="vacxin-package-item__description2">{arr.function}</span>
-                                                <button type="button" className="btn btn-outline-secondary vacxin-package-item_addcart_btn">CHỌN</button>
+                                                <button onClick={()=>AddVaccineToCart(arr.id,arr.name,arr.price,arr.func,arr.description)} type="button" className="btn btn-outline-secondary vacxin-package-item_addcart_btn">CHỌN</button>
                                             </div>
                                         </div>
                                     )})}
@@ -83,15 +135,19 @@ const Search_Vaccine = () => {
                         <div className="col-3">
                             <div className="vacxin-chosen-item">
                                 <h4 className="vacxin-chosen-item__title"><i className="vacxin-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
-                                <div className="vacxin-chosen-item__info">
-                                    <div class="vacxin-chosen-item__name-wrap">
-                                        <span class="vacxin-chosen-item__name">GÓI VẮC XIN INFRANRIX BFSB SDFGSDFG SDFGFDG SDFGSDFGDFS</span>
-                                        <i class="vacxin-chosen-item__name-icon fas fa-times"></i>
-                                    </div>
+                                {CartVaccineList.map(cart => {
+                                    return (
+                                        <div className="vacxin-chosen-item__info">
+                                            <div className="vacxin-chosen-item__name-wrap">
+                                                <span className="vacxin-chosen-item__name">{cart.name}</span>
+                                                <i className="vacxin-chosen-item__name-icon fas fa-times"></i>
+                                            </div>
 
-                                    <span className="vacxin-chosen-item__price">14.604.000 VNĐ</span>
-                                </div>
-                                <button type="button" className="btn btn-outline-secondary vacxin-chosen-item_dk_btn">ĐĂNG KÝ MŨI TIÊM</button>
+                                            <span className="vacxin-chosen-item__price">{cart.price} VNĐ</span>
+                                        </div>
+                                    )})}
+                                
+                                <button onClick={()=>handleSuccessfulAuth1()} type="button" className="btn btn-outline-secondary vacxin-chosen-item_dk_btn">ĐĂNG KÝ MŨI TIÊM</button>
                             </div>
                         </div>
                     </div>

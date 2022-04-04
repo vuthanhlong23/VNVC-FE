@@ -6,7 +6,7 @@ import React, {Fragment,useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 
 const NhapThongTinVacXin = () => {
-    let history = useHistory()
+    
 
     return (
         <div>

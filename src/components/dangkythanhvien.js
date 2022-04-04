@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/dangkythanhvien.css'
@@ -23,7 +23,7 @@ const DangKyThanhVien = () => {
     const SystemLoyalCustomerRegistor = (event) =>{
         try {
             axios({
-                url: `https://localhost:44300/api/loyalcustomer/insertcustomer`,
+                url: `http://vnvc.somee.com/api/loyalcustomer/insertcustomer`,
                 method: 'post',
                 data:
                 {

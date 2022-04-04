@@ -9,6 +9,7 @@ import NhapThongTinVacXin_KHTT from './components/nhapthongtinvacxin_khtt';
 import Thanhtoan from './components/thanhtoan';
 import DangKyThanhVien from './components/dangkythanhvien';
 import Search_Vaccine from './components/search_vacxin';
+import Thongbao from './components/thongbao';
 
 class App extends React.Component {
   render() {
@@ -45,6 +46,10 @@ class App extends React.Component {
               <Route exact path = "/dangkythanhvien">
                   <Header/>
                   <DangKyThanhVien/>
+              </Route>
+              <Route exact path = "/thongbao">
+                  <Header/>
+                  <Thongbao/>
               </Route>
           </Switch>   
         </Router>

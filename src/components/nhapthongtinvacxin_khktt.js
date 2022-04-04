@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/datmuavx1.css'
 import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
+import axios from 'axios';
 
 const NhapThongTinVacXin_KHKTT = () => {
     const [customer_name, setName] = useState('')
@@ -18,13 +19,84 @@ const NhapThongTinVacXin_KHKTT = () => {
     const [customer_commune, setCommune] = useState('')
     const [customer_place, setPlace] = useState('')
     const [customer_vaccination_center, setVaccination_center] = useState('')
+    let history = useHistory()
+    const [VaccineList, setVaccineList] = useState([]);
+    const [CartVaccineList, setCartVaccineList] = useState([]);
+    useEffect(() => {
+        const fetchCartVaccineList = async () =>{
+            try {
+                const res = await axios.get(`https://localhost:44300/api/cart/getcart/2`) 
+                                        .then(res => {
+                                            setCartVaccineList(res.data)    
+                                            console.log(res.data)
+                                        })
+                                        .catch(err => console.log(err));
+            } catch (error) {
+                console.log('Failed to fetch store list', error)
+            }
+        } 
+        const fetchVaccineList = async () =>{
+            try {
+                const res = await axios.get(`http://vnvc.somee.com/api/vaccine/getall`) 
+                                        .then(res => {
+                                            setVaccineList(res.data)    
+                                            console.log(res.data)
+                                        })
+                                        .catch(err => console.log(err));
+            } catch (error) {
+                console.log('Failed to fetch store list', error)
+            }
+        } 
+        fetchCartVaccineList()
+        fetchVaccineList();
+    }, [])
 
+    const AddVaccineToCart = (id,name,price,func,description,event) =>{
+        try {
+            axios({
+                url: `https://localhost:44300/api/cart/addcart/2`,
+                method: 'post',
+                data:
+                {
+                    id: id,
+                    name: name,
+                    price: price,
+                    function: func,
+                    description: description,
+                    active: true,
+                    create_date: "2022-03-29T17:00:00Z"
+                }
+            },
+            { withCredentials: true }
+            )
+            .then(res => {
+                if(res.data===1)
+                {
+                    alert("Thêm sản phẩm thành công")
+                    window.location.reload()
+                }
+                else alert("Sản phẩm đã tồn tại trong giỏ hàng")
+                window.location.reload()
+            })
+            .catch(err => console.log(err)
+            );
+        } catch (error) {
+            console.log('Failed', error)
+        }
+        event.preventDefault();
+    } 
 
-    // function AddLocalCustomer(){
-    //     customers = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
-    //     "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
-    //     return customers
-    // } 
+    function AddLocalCustomer(){
+        let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
+        "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+        return customer
+    } 
+
+    var total_money = 0
+    const TotalAmount = (total) =>{
+        total_money = total_money + total;
+        localStorage.setItem("total_money",total_money)
+    }
 
     return (
         <div>
@@ -166,7 +238,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <select className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={customer_gender} onChange={(e)=>setGender(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Chọn giới tính</option>
                                         <option value="1">Nam</option>
                                         <option value="2">Nữ</option>
@@ -327,13 +399,18 @@ const NhapThongTinVacXin_KHKTT = () => {
                             <div className="row">
                                 <div className="col-8">
                                     <select className="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
-                                        <option value="1">VẮC XIN GCFLU QUADTIVALENT</option>
-                                        <option value="2">VẮC XIN CHO PHỤ NỮ TRƯỚC MANG THAI</option>
-                                        <option value="3">VẮC XIN PHÒNG VIÊM GAN A - AVAXIM 80U</option>
+                                    {VaccineList.map(arr => {
+                                        return (
+                                            <option value={arr.id} onChange={()=>localStorage.setItem("vaccine_id",arr.id)}>{arr.name}</option>
+                                        )})}
+                                        
                                     </select>
                                 </div>
                                 <div className="col-4">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>
+                                    {VaccineList.map(arr => {
+                                        <button onClick={()=>AddVaccineToCart(arr.id,arr.name,arr.price,arr.func,arr.description)} type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>
+                                    })}
+                                            
                                 </div>
                             </div>
 
@@ -342,16 +419,19 @@ const NhapThongTinVacXin_KHKTT = () => {
                             </div>
 
                             <div className="row">
-                                <div className="col-4 align-items-center">
+                            {CartVaccineList.map(cart => {
+                                return (
+                                    <div className="col-4 align-items-center">
                                     <div className="nhapthongtinvx-package-item">
                                         <div className="nhapthongtinvx-package-item__wrap">
-                                            <h4 className="nhapthongtinvx-package-item__name">GÓI VẮC XIN INFRANRIX (0-9 THÁNG) </h4>
-                                            <span className="nhapthongtinvx-package-item__price"><i className="nhapthongtinvx-package-item__icon fa fa-tag"></i>14.190.000 VNĐ</span>
+                                            <h4 className="nhapthongtinvx-package-item__name">{cart.name}</h4>
+                                            <span className="nhapthongtinvx-package-item__price"><i className="nhapthongtinvx-package-item__icon fa fa-tag"></i>{cart.price} VNĐ</span>
                                         </div>
                                         <span className="nhapthongtinvx-package-item__description1">Phòng bệnh:</span>
-                                        <span className="nhapthongtinvx-package-item__description2">Tiêu chảy cấp do Rotavirus, Bạch Hầu, Ho gà, Uốn ván. Bại liệt, Viêm phổi do vi khuẩn não mô cầu tuýp A, C, Y bla bla bla bla bl bla bla bla </span>
-                                    </div>
+                                        <span className="nhapthongtinvx-package-item__description2">{cart.function} </span>
+                                    </div>       
                                 </div>
+                                )})}
                             </div>
                             
                             <div className="row">
@@ -361,28 +441,35 @@ const NhapThongTinVacXin_KHKTT = () => {
                                 </div>
                                 <div className="col-4 nhapthongtinvx_btn_tieptuc_tt">
                                     <button 
-                                        // onClick={(e)=>localStorage.setItem("customers",AddLocalCustomer())} 
+                                        onClick={()=>localStorage.setItem("customer",JSON.stringify(AddLocalCustomer()))} 
                                         type="button" className="btn btn-outline-primary nhapthongtinvx_btn_tieptuc">TIẾP TỤC</button>
                                 </div>
                             </div>
                         </div>
-0
                         <div className="col-4">
                             <div className="nhapthongtinvx-chosen-item">
                                 <h4 className="nhapthongtinvx-chosen-item__title"><i className="nhapthongtinvx-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
-                                <div className="nhapthongtinvx-chosen-item__info">
-                                    <div class="vacxin-chosen-item__name-wrap">
-                                        <span class="nhapthongtinvx-chosen-item__name">GÓI VẮC XIN INFRANRIX BFSB SDFGSDFG SDFGFDG SDFGSDFGDFS</span>
-                                        <i class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
-                                    </div>
+                                {CartVaccineList.map(cart => {
+                                return (
+                                    <div>
+                                        <div className="nhapthongtinvx-chosen-item__info">
+                                            <div class="vacxin-chosen-item__name-wrap">
+                                                <span class="nhapthongtinvx-chosen-item__name">{cart.name}</span>
+                                                <i class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
+                                            </div>
 
-                                    <span className="nhapthongtinvx-chosen-item__price">14.604.000 VNĐ</span>
-                                </div>
+                                            <span className="nhapthongtinvx-chosen-item__price">{cart.price} VNĐ</span>
+                                        </div>
+                                        <script>
+                                            {TotalAmount(cart.price)}
+                                        </script>
+                                    </div>
+                                )})}
                                 <div className="nhapthongtinvx_chosen_item_total">   
                                     <span className="nhapthongtinvx-chosen-item__tongtien_title">TỔNG TIỀN</span>
-                                    <span className="nhapthongtinvx-chosen-item__tongtien_total">14.604.000 VNĐ</span>
+                                    <span className="nhapthongtinvx-chosen-item__tongtien_total">{localStorage.getItem("total_money")} VNĐ</span>
                                 </div>
-                                <button type="button" className="btn btn-outline-primary nhapthongtinvx_chosen-item__xemdktt">XEM ĐIỀU KHOẢN VÀ THANH TOÁN</button>
+                                <button onClick={()=> history.push("/thanhtoan")} type="button" className="btn btn-outline-primary nhapthongtinvx_chosen-item__xemdktt">XEM ĐIỀU KHOẢN VÀ THANH TOÁN</button>
                             </div>
                         </div>
                         

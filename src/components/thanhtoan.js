@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
+import axios from 'axios';
 import {Link, useHistory} from 'react-router-dom';
 import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/thanhtoan.css'
@@ -6,7 +7,76 @@ import '../assets/stylesheets/thanhtoan.css'
 
 
 const Thanhtoan = () => {
-    
+    let history = useHistory()
+    const [payment_name, setName] = useState('')
+    const [payment_phone, setPhone] = useState('')
+    const [payment_email, setEmail] = useState('')
+    const [payment_cccd, setCCCD] = useState('')
+    const [payment_address, setAddress] = useState('')
+    const [payment_city, setCity] = useState('')
+    const [payment_district, setDistrict] = useState('')
+    const [payment_commune, setCommune] = useState('')
+    const [payment_type, setType] = useState('');
+    const [CartVaccineList, setCartVaccineList] = useState([]);
+    useEffect(() => {
+        const fetchCartVaccineList = async () =>{
+            try {
+                const res = await axios.get(`https://localhost:44300/api/cart/getcart/2`) 
+                                        .then(res => {
+                                            setCartVaccineList(res.data)    
+                                            console.log(res.data)
+                                        })
+                                        .catch(err => console.log(err));
+            } catch (error) {
+                console.log('Failed to fetch store list', error)
+            }
+        } 
+        fetchCartVaccineList();
+    }, [])
+
+    var total_money = 0
+    const TotalAmount = (total) =>{
+        total_money = total_money + total;
+        localStorage.setItem("total_money",total_money)
+    }
+    const Payment = (event) =>{
+        try {
+            axios({
+                url: `http://vnvc.somee.com/api/formregistor/insertformregistor`,
+                method: 'post',
+                data:
+                {
+                    customers: [
+                        {
+                            customer: localStorage.getItem("customer"),
+                            item: localStorage.getItem("item")
+                        }
+                    ],
+                    payment_name: payment_name,
+                    payment_phone: payment_phone,
+                    payment_cccd: payment_cccd,
+                    payment_email: payment_email,
+                    payment_address: payment_address,
+                    payment_city: payment_city,
+                    payment_district: payment_district,
+                    payment_commune: payment_commune,
+                    payment_type: payment_type
+                    
+                }
+            },
+            { withCredentials: true }
+            )  
+            .then(res => {
+                history.push("/thongbao")
+                console.log(res.data)
+            })
+            .catch(err => console.log(err));
+        } catch (error) {
+            console.log('Failed to fetch', error)
+        }
+        event.preventDefault();
+    } 
+
     return (
         <div>
             <div className="main-content">
@@ -39,10 +109,12 @@ const Thanhtoan = () => {
                                 </div>
                                 <div className="row payment_items">
                                     <div className="col-6">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Họ và tên *"/>
+                                        <input value={payment_name} onChange={(e)=> setName(e.target.value)}
+                                         type="text" className="form-control payment_item_title" placeholder="Họ và tên *"/>
                                     </div>
                                     <div className="col-6">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Số điện thoại *"/>
+                                        <input value={payment_phone} onChange={(e)=> setPhone(e.target.value)} 
+                                        type="text" className="form-control payment_item_title" placeholder="Số điện thoại *"/>
                                     </div>
                                 </div>
                                 <div className="row payment_items">
@@ -59,10 +131,12 @@ const Thanhtoan = () => {
                                 </div>
                                 <div className="row payment_items">
                                     <div className="col-6">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Email *"/>
+                                        <input value={payment_email} onChange={(e)=> setEmail(e.target.value)} 
+                                         type="text" className="form-control payment_item_title" placeholder="Email *"/>
                                     </div>
                                     <div className="col-6">
-                                        <input type="text" className="form-control payment_item_title" placeholder="CMND/ CCCD/ PASSPORT *"/>
+                                        <input value={payment_cccd} onChange={(e)=> setCCCD(e.target.value)} 
+                                         type="text" className="form-control payment_item_title" placeholder="CMND/ CCCD/ PASSPORT *"/>
                                     </div>
                                 </div>
                                 <div className="row payment_items">
@@ -71,7 +145,8 @@ const Thanhtoan = () => {
                                     </span>
                                 </div>
                                 <div className="row payment_items_address">
-                                    <input type="text" className="form-control payment_item_title" placeholder="Số nhà, tên đường (Theo hộ khẩu/CMND)"/>
+                                    <input value={payment_address} onChange={(e)=> setAddress(e.target.value)}  
+                                    type="text" className="form-control payment_item_title" placeholder="Số nhà, tên đường (Theo hộ khẩu/CMND)"/>
                                 </div>
                                 <div className="row payment_items">
                                     <div className="col-4">
@@ -92,13 +167,16 @@ const Thanhtoan = () => {
                                 </div>
                                 <div className="row payment_items">
                                     <div className="col-4">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Tỉnh/ thành *"/>
+                                        <input value={payment_city} onChange={(e)=> setCity(e.target.value)}  
+                                        type="text" className="form-control payment_item_title" placeholder="Tỉnh/ thành *"/>
                                     </div>
                                     <div className="col-4">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Quận/Huyện *"/>
+                                        <input value={payment_district} onChange={(e)=> setDistrict(e.target.value)}  
+                                        type="text" className="form-control payment_item_title" placeholder="Quận/Huyện *"/>
                                     </div>
                                     <div className="col-4">
-                                        <input type="text" className="form-control payment_item_title" placeholder="Phường/Xã *"/>
+                                        <input value={payment_commune} onChange={(e)=> setCommune(e.target.value)}  
+                                        type="text" className="form-control payment_item_title" placeholder="Phường/Xã *"/>
                                     </div>
                                 </div>
                                 <div className="row payment_items">
@@ -108,31 +186,31 @@ const Thanhtoan = () => {
                                 </div>
                                 <div className="row">
                                     <div className="form-check">
-                                        <input className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                                        <input value={"Thanh toán bằng thẻ thanh toán nội địa (ATM)"} onChange={(e)=> setType(e.target.value)} className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                                         <label className="form-check-label payment_check_type" >
                                             Thanh toán bằng thẻ thanh toán nội địa (ATM)
                                         </label>
                                       </div>
                                       <div className="form-check">
-                                        <input className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                                        <input value={"Thanh toán tại trung tâm"} onChange={(e)=> setType(e.target.value)} className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
                                         <label className="form-check-label payment_check_type" >
                                             Thanh toán bằng thẻ VISA/MASTER/JCB
                                         </label>
                                       </div>
                                       <div className="form-check">
-                                        <input className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked/>
+                                        <input value={"Thanh toán tại trung tâm"} onChange={(e)=> setType(e.target.value)} className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked/>
                                         <label className="form-check-label payment_check_type" >
                                             Thanh toán bằng thẻ thành viên
                                         </label>
                                       </div>
                                       <div className="form-check">
-                                        <input className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked/>
+                                        <input value={"Thanh toán tại trung tâm"} onChange={(e)=> setType(e.target.value)} className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked/>
                                         <label className="form-check-label payment_check_type" >
                                             Thanh toán qua chuyển khoản
                                         </label>
                                       </div>
                                       <div className="form-check">
-                                        <input className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked/>
+                                        <input value={"Thanh toán tại trung tâm"} onChange={(e)=> setType(e.target.value)} className="form-check-input pament-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked/>
                                         <label className="form-check-label payment_check_type" >
                                             Thanh toán tại trung tâm
                                         </label>
@@ -142,32 +220,36 @@ const Thanhtoan = () => {
                             <div className="col-4">
                                 <div className="payment_vacxin-chosen-item">
                                     <h4 className="payment_vacxin-chosen-item__title"><i className="payment_vacxin-chosen-item__icon far fa-clipboard-list"></i>DANH SÁCH VẮC XIN CHỌN MUA </h4>
-                                    <div className="payment_vacxin-chosen-item__info">
-                                        <span className="payment_vacxin-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
-                                        <span className="payment_vacxin-chosen-item__price">14.604.000 VNĐ</span>
-                                        <span className="payment_vacxin-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
-                                        <span className="payment_vacxin-chosen-item__price">14.604.000 VNĐ</span>
-                                        <span className="payment_vacxin-chosen-item__name">GÓI VẮC XIN INFRANRIX</span>
-                                        <span className="payment_vacxin-chosen-item__price">14.604.000 VNĐ</span>
-                                    </div>
-                                    <div className="payment_vacxin-chosen-item__local">
-                                        <span className="payment_vacxin-chosen-item__local_address"> TRUNG TÂM</span>
-                                        <span className="payment_vacxin-chosen-item__location">VNVC DĨ AN</span>
-                                    </div>
+                                    {CartVaccineList.map(cart => {
+                                        return (
+                                            <div>
+                                                <div className="payment_vacxin-chosen-item__info">
+                                                <span className="payment_vacxin-chosen-item__name">{cart.name}</span>
+                                                <span className="payment_vacxin-chosen-item__price">{cart.price} VNĐ</span>
+                                                </div>
+                                                <div className="payment_vacxin-chosen-item__local">
+                                                    <span className="payment_vacxin-chosen-item__local_address">{cart.vaccine_center}</span>
+                                                    <span className="payment_vacxin-chosen-item__location">{cart.place}</span>
+                                                </div>
+                                                <script>
+                                                    {TotalAmount(cart.price)}
+                                                </script>
+                                            </div>
+                                        )})}
+                                    
                                     <div className="payment_vacxin-chosen-item__total">
                                         <span className="payment_vacxin-chosen-item__name__total">TỔNG TIỀN</span>
-                                        <span className="payment_vacxin-chosen-item__price__total">43.381.200 VNĐ</span>
+                                        <span className="payment_vacxin-chosen-item__price__total">{localStorage.getItem("total_money")} VNĐ</span>
                                     </div>
-                                    <Link to="thongbao.html" className="btn btn-outline-secondary payment_vacxin-chosen-item_dk_btn" role="button">
-                                        THANH TOÁN
-                                    </Link>
                                     
+                                    <form onSubmit={Payment}>
+                                        <button type="submit" className="btn btn-outline-secondary payment_vacxin-chosen-item_dk_btn">THANH TOÁN</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div> 
             </div>
         </div>
