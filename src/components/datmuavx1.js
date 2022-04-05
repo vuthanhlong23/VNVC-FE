@@ -65,7 +65,6 @@ const Datmuavx1 = () => {
                     window.location.reload()
                 }
                 else alert("Sản phẩm đã tồn tại trong giỏ hàng")
-                window.location.reload()
             })
             .catch(err => console.log(err)
             );

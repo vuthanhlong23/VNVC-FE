@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const NhapThongTinVacXin_KHKTT = () => {
     const [customer_name, setName] = useState('')
+    const [vaccine, setVaccine] = useState({})
     const [customer_gender, setGender] = useState('')
     const [customer_dateofbirth, setDateofbirth] = useState('')
     const [customer_phone, setPhone] = useState('')
@@ -76,7 +77,6 @@ const NhapThongTinVacXin_KHKTT = () => {
                     window.location.reload()
                 }
                 else alert("Sản phẩm đã tồn tại trong giỏ hàng")
-                window.location.reload()
             })
             .catch(err => console.log(err)
             );
@@ -90,6 +90,11 @@ const NhapThongTinVacXin_KHKTT = () => {
         let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
         "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
         return customer
+    } 
+
+    function AddLocalVaccine(id,name,price,func,description){
+        let vaccine = {"id":id,"name":name,"price":price,"function":func,"description":description}
+        return vaccine
     } 
 
     var total_money = 0
@@ -309,12 +314,12 @@ const NhapThongTinVacXin_KHKTT = () => {
                                 </div>
                                 <div className="col-4">
                                     <span className="nhapthongtinvx_input-title">
-                                        Phường/Huyện *
+                                        Quận/Huyện *
                                     </span>
                                 </div>
                                 <div className="col-4">
                                     <span className="nhapthongtinvx_input-title">
-                                        Quận/Xã *
+                                        Phường/Xã *
                                     </span>
                                 </div>
                             </div>
@@ -398,19 +403,16 @@ const NhapThongTinVacXin_KHKTT = () => {
 
                             <div className="row">
                                 <div className="col-8">
-                                    <select className="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
+                                    <select value={vaccine} onChange={(e)=>setVaccine(e.target.value)} className="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
                                     {VaccineList.map(arr => {
                                         return (
-                                            <option value={arr.id} onChange={()=>localStorage.setItem("vaccine_id",arr.id)}>{arr.name}</option>
+                                            <option value={JSON.stringify(AddLocalVaccine(arr.id,arr.name,arr.price,arr.function,arr.description))}>{arr.name}</option>
                                         )})}
                                         
                                     </select>
                                 </div>
                                 <div className="col-4">
-                                    {VaccineList.map(arr => {
-                                        <button onClick={()=>AddVaccineToCart(arr.id,arr.name,arr.price,arr.func,arr.description)} type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>
-                                    })}
-                                            
+                                    <button onClick={()=>AddVaccineToCart(JSON.parse(vaccine).id,JSON.parse(vaccine).name,JSON.parse(vaccine).price,JSON.parse(vaccine).func,JSON.parse(vaccine).description)}  type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>        
                                 </div>
                             </div>
 

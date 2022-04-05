@@ -8,6 +8,19 @@ import axios from 'axios';
 
 const NhapThongTinVacXin_KHTT = () => {
     let history = useHistory()
+    const [customer_name, setName] = useState('')
+    const [vaccine, setVaccine] = useState({})
+    const [customer_gender, setGender] = useState('')
+    const [customer_dateofbirth, setDateofbirth] = useState('')
+    const [customer_phone, setPhone] = useState('')
+    const [customer_relationship, setRelationship] = useState('')
+    const [customer_email, setEmail] = useState('')
+    const [customer_city, setCity] = useState('')
+    const [customer_address, setAddress] = useState('')
+    const [customer_district, setDistrict] = useState('')
+    const [customer_commune, setCommune] = useState('')
+    const [customer_place, setPlace] = useState('')
+    const [customer_vaccination_center, setVaccination_center] = useState('')
     const [CartVaccineList, setCartVaccineList] = useState([]);
     const [VaccineList, setVaccineList] = useState([]);
     useEffect(() => {
@@ -38,6 +51,51 @@ const NhapThongTinVacXin_KHTT = () => {
         fetchVaccineList()
         fetchCartVaccineList();
     }, [])
+
+    const AddVaccineToCart = (id,name,price,func,description,event) =>{
+        try {
+            axios({
+                url: `https://localhost:44300/api/cart/addcart/2`,
+                method: 'post',
+                data:
+                {
+                    id: id,
+                    name: name,
+                    price: price,
+                    function: func,
+                    description: description,
+                    active: true,
+                    create_date: "2022-03-29T17:00:00Z"
+                }
+            },
+            { withCredentials: true }
+            )
+            .then(res => {
+                if(res.data===1)
+                {
+                    alert("Thêm sản phẩm thành công")
+                    window.location.reload()
+                }
+                else alert("Sản phẩm đã tồn tại trong giỏ hàng")
+            })
+            .catch(err => console.log(err)
+            );
+        } catch (error) {
+            console.log('Failed', error)
+        }
+        event.preventDefault();
+    } 
+
+    function AddLocalCustomer(){
+        let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
+        "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+        return customer
+    } 
+
+    function AddLocalVaccine(id,name,price,func,description){
+        let vaccine = {"id":id,"name":name,"price":price,"function":func,"description":description}
+        return vaccine
+    }
 
     var total_money = 0
     const TotalAmount = (total) =>{
@@ -94,18 +152,20 @@ const NhapThongTinVacXin_KHTT = () => {
                                 <span className="nhapthongtinvx_mota-title">Quý khách có thể đăng ký thêm các loại vắc xin khác và sử dụng cho nhiều lần tiêm khác nhau.</span>
                             </div>
 
+                            
+
                             <div className="row">
                                 <div className="col-8">
-                                    <select className="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
-                                    {VaccineList.map(cart => {
+                                    <select value={vaccine} onChange={(e)=>setVaccine(e.target.value)} className="form-select nhapthongtinvx_chosen_vacxin-item" aria-label="Default select example">
+                                    {VaccineList.map(arr => {
                                         return (
-                                            <option value="1">{cart.name}</option>
+                                            <option value={JSON.stringify(AddLocalVaccine(arr.id,arr.name,arr.price,arr.function,arr.description))}>{arr.name}</option>
                                         )})}
                                         
                                     </select>
                                 </div>
                                 <div className="col-4">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>
+                                    <button onClick={()=>AddVaccineToCart(JSON.parse(vaccine).id,JSON.parse(vaccine).name,JSON.parse(vaccine).price,JSON.parse(vaccine).func,JSON.parse(vaccine).description)}  type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">THÊM VẮC XIN</button>        
                                 </div>
                             </div>
 

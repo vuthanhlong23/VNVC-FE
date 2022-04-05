@@ -263,6 +263,7 @@
     color: #606266;
     background-color: var(--white-color);
     width: 70%;
+    height: 34px;
     border-radius: 8px;
 }
 
