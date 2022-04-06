@@ -44,25 +44,25 @@ const Thanhtoan = () => {
             axios({
                 url: `http://vnvc.somee.com/api/formregistor/insertformregistor`,
                 method: 'post',
-                data:
-                {
-                    customers: [
-                        {
-                            customer: localStorage.getItem("customer"),
-                            item: localStorage.getItem("item")
-                        }
-                    ],
-                    payment_name: payment_name,
-                    payment_phone: payment_phone,
-                    payment_cccd: payment_cccd,
-                    payment_email: payment_email,
-                    payment_address: payment_address,
-                    payment_city: payment_city,
-                    payment_district: payment_district,
-                    payment_commune: payment_commune,
-                    payment_type: payment_type
-                    
-                }
+                    data:
+                    {
+                        customers: [
+                            {
+                                customer: JSON.parse(localStorage.getItem("customer")),
+                                item: JSON.parse(localStorage.getItem("item"))
+                            }
+                        ],
+                        payment_name: payment_name,
+                        payment_phone: payment_phone,
+                        payment_cccd: payment_cccd,
+                        payment_email: payment_email,
+                        payment_address: payment_address,
+                        payment_city: payment_city,
+                        payment_district: payment_district,
+                        payment_commune: payment_commune,
+                        payment_type: payment_type
+                        
+                    }
             },
             { withCredentials: true }
             )  

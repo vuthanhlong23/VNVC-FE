@@ -8,19 +8,8 @@ import axios from 'axios';
 
 const NhapThongTinVacXin_KHTT = () => {
     let history = useHistory()
-    const [customer_name, setName] = useState('')
+    const [loyal_customer_id, setLoyalCustomer] = useState('')
     const [vaccine, setVaccine] = useState({})
-    const [customer_gender, setGender] = useState('')
-    const [customer_dateofbirth, setDateofbirth] = useState('')
-    const [customer_phone, setPhone] = useState('')
-    const [customer_relationship, setRelationship] = useState('')
-    const [customer_email, setEmail] = useState('')
-    const [customer_city, setCity] = useState('')
-    const [customer_address, setAddress] = useState('')
-    const [customer_district, setDistrict] = useState('')
-    const [customer_commune, setCommune] = useState('')
-    const [customer_place, setPlace] = useState('')
-    const [customer_vaccination_center, setVaccination_center] = useState('')
     const [CartVaccineList, setCartVaccineList] = useState([]);
     const [VaccineList, setVaccineList] = useState([]);
     useEffect(() => {
@@ -49,8 +38,31 @@ const NhapThongTinVacXin_KHTT = () => {
             }
         } 
         fetchVaccineList()
-        fetchCartVaccineList();
+        fetchCartVaccineList()
     }, [])
+
+    function handleSuccessfulAuth(){
+        localStorage.setItem("loyal_customer_id", loyal_customer_id)
+        history.push("/nhapthongtinvacxin_khtt_login")
+    }
+
+    const fetchCustomer = async (id) =>{
+        try {
+            const res = await axios.get(`http://vnvc.somee.com/api/loyalcustomer/getinfo/${id}`) 
+                                    .then(res => {
+                                        if(res.data)
+                                        {
+                                            handleSuccessfulAuth()
+                                            localStorage.setItem("Loyal_customer",JSON.stringify(res.data))
+                                            
+                                        } 
+                                        else alert("Mã thẻ thành viên không tồn tại!")
+                                    })
+                                    .catch(err => console.log(err));
+        } catch (error) {
+            console.log('Failed to fetch store list', error)
+        }
+    } 
 
     const AddVaccineToCart = (id,name,price,func,description,event) =>{
         try {
@@ -86,10 +98,21 @@ const NhapThongTinVacXin_KHTT = () => {
         event.preventDefault();
     } 
 
-    function AddLocalCustomer(){
-        let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
-        "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
-        return customer
+    const DeleteVaccineCart = async (key) =>{
+        try {
+            const res = await axios(`https://localhost:44300/api/cart/deleteitem/${key}`,
+                {method: 'delete'
+            },
+            { withCredentials: true }
+            )
+            .then(res => {
+                window.location.reload()
+            })
+            .catch(err => console.log(err)
+            );
+        } catch (error) {
+            console.log('Failed', error)
+        }
     } 
 
     function AddLocalVaccine(id,name,price,func,description){
@@ -139,11 +162,11 @@ const NhapThongTinVacXin_KHTT = () => {
                             <div className="row">
                                 <div className="col-8">
                                     <div className="input-group mb-3">
-                                        <input type="text" placeholder="Nhập mã thẻ thành viên của quý khách" className="form-control"></input>  
+                                        <input value={loyal_customer_id} onChange={(e)=>setLoyalCustomer(e.target.value)} type="text" placeholder="Nhập mã thẻ thành viên của quý khách" className="form-control"></input>  
                                     </div>
                                 </div>
                                 <div className="col-4">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_khtt_tieptuc">TIẾP TỤC</button>
+                                    <button onClick={()=>fetchCustomer(loyal_customer_id)} type="button" className="btn btn-outline-primary nhapthongtinvx_btn_khtt_tieptuc">TIẾP TỤC</button>
                                 </div>
                             </div>
                             
@@ -209,7 +232,7 @@ const NhapThongTinVacXin_KHTT = () => {
                                         <div className="nhapthongtinvx-chosen-item__info">
                                             <div class="vacxin-chosen-item__name-wrap">
                                                 <span class="nhapthongtinvx-chosen-item__name">{cart.name}</span>
-                                                <i class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
+                                                <i onClick={()=> DeleteVaccineCart(cart.key)} class="nhapthongtinvx-chosen-item__name-icon fas fa-times"></i>
                                             </div>
 
                                             <span className="nhapthongtinvx-chosen-item__price">{cart.price} VNĐ</span>

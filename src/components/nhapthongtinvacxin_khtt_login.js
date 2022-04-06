@@ -6,14 +6,14 @@ import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
 import axios from 'axios';
 
-const NhapThongTinVacXin_KHKTT = () => {
-    const [customer_name, setName] = useState('')
+const NhapThongTinVacXin_KHKTT_Login = () => {
+    // const [customer_name, setName] = useState('')
     const [vaccine, setVaccine] = useState({})
     const [customer_gender, setGender] = useState('')
-    const [customer_dateofbirth, setDateofbirth] = useState('')
-    const [customer_phone, setPhone] = useState('')
+    // const [customer_dateofbirth, setDateofbirth] = useState('')
+    // const [customer_phone, setPhone] = useState('')
     const [customer_relationship, setRelationship] = useState('')
-    const [customer_email, setEmail] = useState('')
+    // const [customer_email, setEmail] = useState('')
     const [customer_city, setCity] = useState('')
     const [customer_address, setAddress] = useState('')
     const [customer_district, setDistrict] = useState('')
@@ -23,6 +23,7 @@ const NhapThongTinVacXin_KHKTT = () => {
     let history = useHistory()
     const [VaccineList, setVaccineList] = useState([]);
     const [CartVaccineList, setCartVaccineList] = useState([]);
+
     useEffect(() => {
         const fetchCartVaccineList = async () =>{
             try {
@@ -36,6 +37,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                 console.log('Failed to fetch store list', error)
             }
         } 
+
         const fetchVaccineList = async () =>{
             try {
                 const res = await axios.get(`http://vnvc.somee.com/api/vaccine/getall`) 
@@ -104,8 +106,8 @@ const NhapThongTinVacXin_KHKTT = () => {
     } 
 
     function AddLocalCustomer(){
-        let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
-        "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+        let customer = {"customer_name":JSON.parse(localStorage.getItem("Loyal_customer")).name,"customer_gender":customer_gender,"customer_dateofbirth":JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth,"customer_phone":JSON.parse(localStorage.getItem("Loyal_customer")).phone,"customer_relationship":customer_relationship,
+        "customer_email":JSON.parse(localStorage.getItem("Loyal_customer")).email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
         return customer
     } 
 
@@ -140,13 +142,13 @@ const NhapThongTinVacXin_KHKTT = () => {
                         <div className="col-8">
                             <div className="row">
                                 <Link to="/nhapthongtinvacxin_khtt" className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault1">
                                         Quý khách là thành viên khách hàng thân thiết
                                     </label>
                                 </Link>
                                 <Link to="/nhapthongtinvacxin_khktt" className="form-check">
-                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
                                     <label className="form-check-label nhapthongtinvx_customertype" for="flexRadioDefault2">
                                         Quý khách chưa là thành viên khách hàng thân thiết
                                     </label>
@@ -158,42 +160,6 @@ const NhapThongTinVacXin_KHKTT = () => {
                                 </span>
                                 <span className="nhapthongtinvx_personalinfo-description">
                                     Quý khách có thể đăng ký cùng lúc cho tối đa 5 người tiêm, VNVC chỉ thực hiện tiêm chủng cho Khách hàng có thông tin đăng ký trùng khớp hoàn toàn với thông tin Quý Khách cung cấp tại đây.
-                                </span>
-                            </div>
-
-                            <div className="row align-items-start">
-                                <div className="col-4">
-                                    <span className="nhapthongtinvx_input-title">
-                                        Nhập mã khách hàng tại VNVC
-                                    </span>
-                                </div>
-                                <div className="col-4">
-                                    <span className="nhapthongtinvx_input-title">
-                                        Ngày tháng năm sinh
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-4">
-                                    <div className="input-group mb-3">
-                                        <input type="text" placeholder="Nhập mã khách hàng" className="form-control"/> 
-                                    </div>
-                                </div>
-                                <div className="col-4">
-                                    <div className="input-group mb-3">
-                                        <input type="date" placeholder="Ngày sinh" className="form-control"/>
-                                    </div>
-                                </div>
-                                <div className="col-4">
-                                    <button type="button" className="btn btn-outline-primary nhapthongtinvx_btn_kiemtra">KIỂM TRA</button>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <span className="nhapthongtinvx_kiemtra-note">
-                                    Nếu đã có mã số tiêm chủng tại VNVC (mã khách hàng), vui lòng nhập mã tiêm chủng và ngày tháng năm sinh để tự động điền thông tin.
-                                    Mã tiêm chủng VNVC là dãy số được in trên sticker dán trên sổ tiêm chủng.
                                 </span>
                             </div>
 
@@ -217,11 +183,9 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Họ và tên" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_name}
-                                            onChange={(e)=> setName(e.target.value)}
-                                            required
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).name}
                                         />  
-                                    </div>
+                                        </div> 
                                 </div>
                                 <div className="col-6">
                                     <select value={customer_relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
@@ -258,8 +222,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Ngày sinh" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_dateofbirth}
-                                            onChange={(e)=> setDateofbirth(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth.substring(0,10)}
                                             required
                                         />  
                                     </div>
@@ -291,8 +254,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Số điện thoại" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_phone}
-                                            onChange={(e)=> setPhone(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).phone}
                                             required
                                         />  
                                     </div>
@@ -303,8 +265,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="email" 
                                             placeholder="Email" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_email}
-                                            onChange={(e)=> setEmail(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).email}
                                             required
                                         />  
                                     </div>
@@ -508,4 +469,4 @@ const NhapThongTinVacXin_KHKTT = () => {
     );
 }
 
-export default NhapThongTinVacXin_KHKTT;
+export default NhapThongTinVacXin_KHKTT_Login;
