@@ -35,7 +35,7 @@ const Trangchu = () => {
                                     <Link to="#"><i className="header_desktop_vnvc__navbar-item_icon fas fa-question-circle"></i>TƯ VẤN</Link>
                                 </li>
                                 <li className="header_desktop_vnvc__navbar-item">
-                                    <Link to="#"><img className="logo-eplus" src={eplus} alt=""/></Link>
+                                    <Link to="/dangkythanhvien"><img className="logo-eplus" src={eplus} alt=""/></Link>
                                 </li>
                                 <li className="header_desktop_vnvc__navbar-item header_desktop_vnvc__navbar-hotline">
                                     <Link to="#">Hotline: 028 7300 6595</Link>

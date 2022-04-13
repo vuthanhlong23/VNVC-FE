@@ -41,19 +41,14 @@ const NhapThongTinVacXin_KHTT = () => {
         fetchCartVaccineList()
     }, [])
 
-    function handleSuccessfulAuth(){
-        localStorage.setItem("loyal_customer_id", loyal_customer_id)
-        history.push("/nhapthongtinvacxin_khtt_login")
-    }
-
     const fetchCustomer = async (id) =>{
         try {
             const res = await axios.get(`http://vnvc.somee.com/api/loyalcustomer/getinfo/${id}`) 
                                     .then(res => {
                                         if(res.data)
                                         {
-                                            handleSuccessfulAuth()
                                             localStorage.setItem("Loyal_customer",JSON.stringify(res.data))
+                                            history.push("/nhapthongtinvacxin_khtt_login")
                                             
                                         } 
                                         else alert("Mã thẻ thành viên không tồn tại!")

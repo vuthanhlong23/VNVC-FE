@@ -223,13 +223,21 @@
 }
 
 .nhapthongtinvx-package-item__description2{
+
     font-size: 1.4rem;
     font-weight: 400;
     color: #595959!important;
     display: flex;
     justify-content: center; 
     padding: 10px 10px 0 10px;
-    height: 140px;
+    height: 98px;
+
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    margin-bottom: 42px;
 }
 
 .nhapthongtinvx_btn_nhaplaithongtin_nltt{

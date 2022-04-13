@@ -255,7 +255,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                 <div className="col-6">
                                     <div className="input-group mb-3">
                                         <input 
-                                            type="text" 
+                                            type="date" 
                                             placeholder="Ngày sinh" 
                                             className="form-control nhapthongtinvx_input-item"
                                             value={customer_dateofbirth}

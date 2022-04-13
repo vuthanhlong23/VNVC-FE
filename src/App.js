@@ -10,7 +10,7 @@ import Thanhtoan from './components/thanhtoan';
 import DangKyThanhVien from './components/dangkythanhvien';
 import Search_Vaccine from './components/search_vacxin';
 import Thongbao from './components/thongbao';
-import NhapThongTinVacXin_KHKTT_Login from './components/nhapthongtinvacxin_khtt_login';
+import NhapThongTinVacXin_KHTT_Login from './components/nhapthongtinvacxin_khtt_login';
 
 class App extends React.Component {
   render() {
@@ -45,7 +45,7 @@ class App extends React.Component {
               </Route>
               <Route exact path = "/nhapthongtinvacxin_khtt_login">
                   <Header/>
-                  <NhapThongTinVacXin_KHKTT_Login/>
+                  <NhapThongTinVacXin_KHTT_Login/>
               </Route>
               <Route exact path = "/thanhtoan">
                   <Header/>

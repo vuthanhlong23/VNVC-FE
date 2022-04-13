@@ -228,11 +228,13 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_gender} onChange={(e)=>setGender(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
-                                        <option selected>Chọn giới tính</option>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
-                                    </select>
+                                    <input 
+                                            type="text" 
+                                            placeholder="Ngày sinh" 
+                                            className="form-control nhapthongtinvx_input-item"
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).gender}
+                                            required
+                                        />
                                 </div>
                             </div>
 
@@ -282,8 +284,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                         type="text" 
                                         placeholder="Địa chỉ" 
                                         className="form-control nhapthongtinvx_input-item"
-                                        value={customer_address}
-                                        onChange={(e)=> setAddress(e.target.value)}
+                                        value={JSON.parse(localStorage.getItem("Loyal_customer")).address}
                                         required    
                                     />  
                                 </div>
@@ -314,8 +315,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                             type="text" 
                                             placeholder="Tỉnh/thành" 
                                             className="form-control"
-                                            value={customer_city}
-                                            onChange={(e)=> setCity(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).city}
                                             required
                                         />  
                                     </div>
@@ -326,8 +326,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                             type="text" 
                                             placeholder="Quận/huyện" 
                                             className="form-control"
-                                            value={customer_district}
-                                            onChange={(e)=> setDistrict(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).district}
                                             required
                                         />
                                     </div>
@@ -338,8 +337,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                             type="text" 
                                             placeholder="Phường/xã" 
                                             className="form-control"
-                                            value={customer_commune}
-                                            onChange={(e)=> setCommune(e.target.value)}
+                                            value={JSON.parse(localStorage.getItem("Loyal_customer")).commune}
                                             required
                                         />
                                     </div>

@@ -4,7 +4,7 @@ import '../fonts/fontawesome-free-5.15.3-web/css/all.min.css';
 import '../assets/stylesheets/datmuavx1.css'
 import '../assets/stylesheets/base.css'
 import '../assets/stylesheets/nhapthongtinvx.css'
-import Logo from "../assets/res/logovnvc.png";
+import Logo from "../assets/res/datmuavx1.png";
 
 const Header = () => {
     

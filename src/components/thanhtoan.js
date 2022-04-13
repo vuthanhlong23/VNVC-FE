@@ -42,7 +42,7 @@ const Thanhtoan = () => {
     const Payment = (event) =>{
         try {
             axios({
-                url: `http://vnvc.somee.com/api/formregistor/insertformregistor`,
+                url: `https://localhost:44300/api/formregistor/insertformregistor`,
                 method: 'post',
                     data:
                     {

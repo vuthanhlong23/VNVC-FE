@@ -145,7 +145,7 @@ const Datmuavx1 = () => {
                                                 </div>
                                                 <span className="vacxin-package-item__description1">Phòng bệnh:</span>
                                                 <span className="vacxin-package-item__description2">{arr.function}</span>
-                                                <button onClick={()=>AddVaccineToCart(arr.id,arr.name,arr.price,arr.func,arr.description)}  type="button" className="btn btn-outline-secondary vacxin-package-item_addcart_btn">CHỌN</button>
+                                                <button onClick={()=>AddVaccineToCart(arr.id,arr.name,arr.price,arr.function,arr.description)}  type="button" className="btn btn-outline-secondary vacxin-package-item_addcart_btn">CHỌN</button>
                                             </div>
                                         </div>
                                     )})}

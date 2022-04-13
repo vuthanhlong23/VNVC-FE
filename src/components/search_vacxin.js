@@ -39,6 +39,23 @@ const Search_Vaccine = () => {
         fetchCartVaccineList();
     }, [])
 
+    const DeleteVaccineCart = async (key) =>{
+        try {
+            const res = await axios(`https://localhost:44300/api/cart/deleteitem/${key}`,
+                {method: 'delete'
+            },
+            { withCredentials: true }
+            )
+            .then(res => {
+                window.location.reload()
+            })
+            .catch(err => console.log(err)
+            );
+        } catch (error) {
+            console.log('Failed', error)
+        }
+    } 
+
     const AddVaccineToCart = (id,name,price,func,description,event) =>{
         try {
             axios({
@@ -140,7 +157,7 @@ const Search_Vaccine = () => {
                                         <div className="vacxin-chosen-item__info">
                                             <div className="vacxin-chosen-item__name-wrap">
                                                 <span className="vacxin-chosen-item__name">{cart.name}</span>
-                                                <i className="vacxin-chosen-item__name-icon fas fa-times"></i>
+                                                <i onClick={()=>DeleteVaccineCart(cart.key)} className="vacxin-chosen-item__name-icon fas fa-times"></i>
                                             </div>
 
                                             <span className="vacxin-chosen-item__price">{cart.price} VNĐ</span>
