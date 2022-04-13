@@ -7,19 +7,19 @@ import '../assets/stylesheets/nhapthongtinvx.css'
 import axios from 'axios';
 
 const NhapThongTinVacXin_KHKTT_Login = () => {
-    // const [customer_name, setName] = useState('')
+    // const [name, setName] = useState('')
     const [vaccine, setVaccine] = useState({})
-    const [customer_gender, setGender] = useState('')
-    // const [customer_dateofbirth, setDateofbirth] = useState('')
-    // const [customer_phone, setPhone] = useState('')
-    const [customer_relationship, setRelationship] = useState('')
-    // const [customer_email, setEmail] = useState('')
-    const [customer_city, setCity] = useState('')
-    const [customer_address, setAddress] = useState('')
-    const [customer_district, setDistrict] = useState('')
-    const [customer_commune, setCommune] = useState('')
-    const [customer_place, setPlace] = useState('')
-    const [customer_vaccination_center, setVaccination_center] = useState('')
+    const [gender, setGender] = useState('')
+    // const [dateofbirth, setDateofbirth] = useState('')
+    // const [phone, setPhone] = useState('')
+    const [relationship, setRelationship] = useState('')
+    // const [email, setEmail] = useState('')
+    const [city, setCity] = useState('')
+    const [address, setAddress] = useState('')
+    const [district, setDistrict] = useState('')
+    const [commune, setCommune] = useState('')
+    const [place, setPlace] = useState('')
+    const [vaccination_center, setVaccination_center] = useState('')
     let history = useHistory()
     const [VaccineList, setVaccineList] = useState([]);
     const [CartVaccineList, setCartVaccineList] = useState([]);
@@ -106,8 +106,8 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
     } 
 
     function AddLocalCustomer(){
-        let customer = {"customer_name":JSON.parse(localStorage.getItem("Loyal_customer")).name,"customer_gender":customer_gender,"customer_dateofbirth":JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth,"customer_phone":JSON.parse(localStorage.getItem("Loyal_customer")).phone,"customer_relationship":customer_relationship,
-        "customer_email":JSON.parse(localStorage.getItem("Loyal_customer")).email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+        let customer = {"name":JSON.parse(localStorage.getItem("Loyal_customer")).name,"gender":gender,"dateofbirth":JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth,"phone":JSON.parse(localStorage.getItem("Loyal_customer")).phone,"relationship":relationship,
+        "email":JSON.parse(localStorage.getItem("Loyal_customer")).email,"city":city,"address":address,"district":district,"commune":commune,"place":place,"vaccination_center":vaccination_center}
         return customer
     } 
 
@@ -188,7 +188,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                         </div> 
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Chọn mối quan hệ</option>
                                         <option value="Bản Thân">Bản thân</option>
                                         <option value="Cha">Cha</option>
@@ -361,7 +361,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
         
                             <div className="row">
                                 <div className="col-6">
-                                    <select value={customer_place} onChange={(e)=> setPlace(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={place} onChange={(e)=> setPlace(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ Chí Minh</option>
                                         <option value="Thành Phố Hà Nội">Thành Phố Hà Nội</option>
                                         <option value="Thành Phố Đà Nẵng">Thành Phố Đà Nẵng</option>
@@ -370,7 +370,7 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
                                     </select>
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_vaccination_center} onChange={(e)=> setVaccination_center(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={vaccination_center} onChange={(e)=> setVaccination_center(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Trung tâm VNVC</option>
                                         <option value="VNVC Bình Thạnh">VNVC Bình Thạnh</option>
                                         <option value="VNVC Thủ Đức">VNVC Thủ Đức</option>

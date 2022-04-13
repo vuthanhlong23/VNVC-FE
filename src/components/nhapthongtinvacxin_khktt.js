@@ -7,19 +7,19 @@ import '../assets/stylesheets/nhapthongtinvx.css'
 import axios from 'axios';
 
 const NhapThongTinVacXin_KHKTT = () => {
-    const [customer_name, setName] = useState('')
+    const [name, setName] = useState('')
     const [vaccine, setVaccine] = useState({})
-    const [customer_gender, setGender] = useState('')
-    const [customer_dateofbirth, setDateofbirth] = useState('')
-    const [customer_phone, setPhone] = useState('')
-    const [customer_relationship, setRelationship] = useState('')
-    const [customer_email, setEmail] = useState('')
-    const [customer_city, setCity] = useState('')
-    const [customer_address, setAddress] = useState('')
-    const [customer_district, setDistrict] = useState('')
-    const [customer_commune, setCommune] = useState('')
-    const [customer_place, setPlace] = useState('')
-    const [customer_vaccination_center, setVaccination_center] = useState('')
+    const [gender, setGender] = useState('')
+    const [date_of_birth, setDateofbirth] = useState('')
+    const [phone, setPhone] = useState('')
+    const [relationship, setRelationship] = useState('')
+    const [email, setEmail] = useState('')
+    const [city, setCity] = useState('')
+    const [address, setAddress] = useState('')
+    const [district, setDistrict] = useState('')
+    const [commune, setCommune] = useState('')
+    const [place, setPlace] = useState('')
+    const [vaccination_center, setVaccination_center] = useState('')
     let history = useHistory()
     const [VaccineList, setVaccineList] = useState([]);
     const [CartVaccineList, setCartVaccineList] = useState([]);
@@ -104,8 +104,8 @@ const NhapThongTinVacXin_KHKTT = () => {
     } 
 
     function AddLocalCustomer(){
-        let customer = {"customer_name":customer_name,"customer_gender":customer_gender,"customer_dateofbirth":customer_dateofbirth,"customer_phone":customer_phone,"customer_relationship":customer_relationship,
-        "customer_email":customer_email,"customer_city":customer_city,"customer_address":customer_address,"customer_district":customer_district,"customer_commune":customer_commune,"customer_place":customer_place,"customer_vaccination_center":customer_vaccination_center}
+        let customer = {"name":name,"gender":gender,"date_of_birth":date_of_birth,"phone":phone,"relationship":relationship,
+        "email":email,"city":city,"address":address,"district":district,"commune":commune,"place":place,"vaccination_center":vaccination_center}
         return customer
     } 
 
@@ -217,14 +217,14 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Họ và tên" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_name}
+                                            value={name}
                                             onChange={(e)=> setName(e.target.value)}
                                             required
                                         />  
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={relationship} onChange={(e)=> setRelationship(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Chọn mối quan hệ</option>
                                         <option value="Bản Thân">Bản thân</option>
                                         <option value="Cha">Cha</option>
@@ -258,14 +258,14 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="date" 
                                             placeholder="Ngày sinh" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_dateofbirth}
+                                            value={date_of_birth}
                                             onChange={(e)=> setDateofbirth(e.target.value)}
                                             required
                                         />  
                                     </div>
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_gender} onChange={(e)=>setGender(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={gender} onChange={(e)=>setGender(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Chọn giới tính</option>
                                         <option value="Nam">Nam</option>
                                         <option value="Nữ">Nữ</option>
@@ -291,7 +291,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Số điện thoại" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_phone}
+                                            value={phone}
                                             onChange={(e)=> setPhone(e.target.value)}
                                             required
                                         />  
@@ -303,7 +303,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="email" 
                                             placeholder="Email" 
                                             className="form-control nhapthongtinvx_input-item"
-                                            value={customer_email}
+                                            value={email}
                                             onChange={(e)=> setEmail(e.target.value)}
                                             required
                                         />  
@@ -321,7 +321,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                         type="text" 
                                         placeholder="Địa chỉ" 
                                         className="form-control nhapthongtinvx_input-item"
-                                        value={customer_address}
+                                        value={address}
                                         onChange={(e)=> setAddress(e.target.value)}
                                         required    
                                     />  
@@ -353,7 +353,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Tỉnh/thành" 
                                             className="form-control"
-                                            value={customer_city}
+                                            value={city}
                                             onChange={(e)=> setCity(e.target.value)}
                                             required
                                         />  
@@ -365,7 +365,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Quận/huyện" 
                                             className="form-control"
-                                            value={customer_district}
+                                            value={district}
                                             onChange={(e)=> setDistrict(e.target.value)}
                                             required
                                         />
@@ -377,7 +377,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                             type="text" 
                                             placeholder="Phường/xã" 
                                             className="form-control"
-                                            value={customer_commune}
+                                            value={commune}
                                             onChange={(e)=> setCommune(e.target.value)}
                                             required
                                         />
@@ -402,7 +402,8 @@ const NhapThongTinVacXin_KHKTT = () => {
         
                             <div className="row">
                                 <div className="col-6">
-                                    <select value={customer_place} onChange={(e)=> setPlace(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={place} onChange={(e)=> setPlace(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                        <option selected>Tỉnh/Thành</option>
                                         <option value="Thành Phố Hồ Chí Minh">Thành Phố Hồ Chí Minh</option>
                                         <option value="Thành Phố Hà Nội">Thành Phố Hà Nội</option>
                                         <option value="Thành Phố Đà Nẵng">Thành Phố Đà Nẵng</option>
@@ -411,7 +412,7 @@ const NhapThongTinVacXin_KHKTT = () => {
                                     </select>
                                 </div>
                                 <div className="col-6">
-                                    <select value={customer_vaccination_center} onChange={(e)=> setVaccination_center(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
+                                    <select value={vaccination_center} onChange={(e)=> setVaccination_center(e.target.value)} className="form-select nhapthongtinvx_input-item" aria-label="Default select example">
                                         <option selected>Trung tâm VNVC</option>
                                         <option value="VNVC Bình Thạnh">VNVC Bình Thạnh</option>
                                         <option value="VNVC Thủ Đức">VNVC Thủ Đức</option>
