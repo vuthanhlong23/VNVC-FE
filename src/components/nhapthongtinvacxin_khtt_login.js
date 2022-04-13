@@ -106,8 +106,8 @@ const NhapThongTinVacXin_KHKTT_Login = () => {
     } 
 
     function AddLocalCustomer(){
-        let customer = {"name":JSON.parse(localStorage.getItem("Loyal_customer")).name,"gender":gender,"dateofbirth":JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth,"phone":JSON.parse(localStorage.getItem("Loyal_customer")).phone,"relationship":relationship,
-        "email":JSON.parse(localStorage.getItem("Loyal_customer")).email,"city":city,"address":address,"district":district,"commune":commune,"place":place,"vaccination_center":vaccination_center}
+        let customer = {"name":JSON.parse(localStorage.getItem("Loyal_customer")).name,"gender":JSON.parse(localStorage.getItem("Loyal_customer")).gender,"dateofbirth":JSON.parse(localStorage.getItem("Loyal_customer")).date_of_birth,"phone":JSON.parse(localStorage.getItem("Loyal_customer")).phone,"relationship":relationship,
+        "email":JSON.parse(localStorage.getItem("Loyal_customer")).email,"city":JSON.parse(localStorage.getItem("Loyal_customer")).city,"address":JSON.parse(localStorage.getItem("Loyal_customer")).address,"district":JSON.parse(localStorage.getItem("Loyal_customer")).district,"commune":JSON.parse(localStorage.getItem("Loyal_customer")).commune,"place":place,"vaccination_center":vaccination_center}
         return customer
     } 
 
